@@ -5,9 +5,12 @@
 
 using namespace std;
 
+
+//---------Juego hecho por PABLO GARCIA Y WEI ZHENG----------------
+
 ///////////////////////////////////////// VARIABLES GLOBALES ////////////////////////////////////////////
 
-char title[] = "Motor con POO";								// TÃ­tulo de la ventana
+char title[] = "Motor de Juego: Carrera Coches";				    // TÃ­tulo de la ventana
 int windowWidth = 640;												// Ancho inicial de la ventana
 int windowHeight = 480;												// Alto inicial de la ventana
 int windowPositionX = 300;											// PosiciÃ³n X de la esquina superior izquierda
