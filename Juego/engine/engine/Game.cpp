@@ -9,11 +9,11 @@ void Game::Create()
 {
 	Scene* mainScene = new(nothrow) Scene();
 	FlyingCamera mainCamera = mainScene->GetCamera();
-	mainCamera.SetPosition(Vector3D(-5.0f, 10.0f, 20.0f));
-	mainCamera.SetOrientation(Vector3D(20.0f, 35.0f, 0.0f));
+	mainCamera.SetPosition(Vector3D(5.0f, 10.0f, 20.0f)); //posicion camara fija
+	mainCamera.SetOrientation(Vector3D(20.0f, 0.0f, 0.0f));
 	mainScene->SetCamera(mainCamera);
 
-	Cube* cubes = new(nothrow) Cube[8];
+	/*Cube* cubes = new(nothrow) Cube[8];
 	for (int index = 0; index < 8; index++)
 	{
 		cubes[index] = Cube();
@@ -30,49 +30,35 @@ void Game::Create()
 	cubes[4].SetPosition(Vector3D(10.0f, 0.0f, 0.0f));
 	cubes[5].SetPosition(Vector3D(10.0f, 0.0f, 10.0f));
 	cubes[6].SetPosition(Vector3D(10.0f, 10.0f, 0.0f));
-	cubes[7].SetPosition(Vector3D(10.0f, 10.0f, 10.0f));
+	cubes[7].SetPosition(Vector3D(10.0f, 10.0f, 10.0f));*/
 
-
-	Cube* pointerToCubes = new(nothrow) Cube[4];
+	int i = 10;
+	Cube* pointerToCubes = new(nothrow) Cube[10];
 	if (pointerToCubes != nullptr) {
-		for (int index = 0; index < 4; index++) {
+		for (int index = 0; index < 10; index++) {
 			pointerToCubes[index] = Cube(
-				Vector3D((0.2 + index * 0.1), (0.3 + index * 0.1), (0.1 + index * 0.1)),
-				Color((0.2 + index * 0.2), (0.4 + index * 0.1), (0.7 + index * 0.1)),
-				Vector3D((0.02 + index * 0.01), (0.2 + index * 0.01), (0.1 + index * 0.01)),
-				0.1 + index * 0.1
-			);
-			pointerToCubes[index].SetOrientationSpeed(Vector3D(10.0f, 1.0f, 0.0f));
+				Vector3D((1 + index * 0.1), (0.5), (1 - i+ 100 *0.1)),  //posición 
+				Color((0.2 + index * 0.5),(0.4 * 0.1),(0.7 * 0.1)), 
+				Vector3D((0.02 + index* 0.001),(0),(0)),  //velocidad
+				0.1 + 2 * 0.1);
+			i += 60;
+			pointerToCubes[index].SetOrientationSpeed(Vector3D(0.0f, 0.0f, 0.0f));
 			mainScene->AddGameObject(pointerToCubes + index);
+			pointerToCubes[index].SetIsAffectedByGravity(false);
 		}
 	}
 
-	Sphere* pointerToSphere = nullptr;
-
-	
-	pointerToSphere = new(nothrow) Sphere(
-		Vector3D((0.3), (0.4), (0.9)),
-		Color((0.8), (0.7), (0.2)),
-		Vector3D((0.2), (0.3), (0.1)),
-		Vector3D(),
-		0.4
-	);
-	mainScene->AddGameObject(pointerToSphere);
-
-	Cylinder* cylinder = new Cylinder(1.0f, 4.0f);
-	cylinder->SetPosition(Vector3D(4.0f, 8.0f, 6.0f));
-	cylinder->SetColor(Color(0.4f, 0.5f, 0.2f));
-	cylinder->SetOrientationSpeed(Vector3D(1.0f, 0.0f, 0.0f));
-	mainScene->AddGameObject(cylinder);
-
-	Torus* torus = new Torus();
+	 //para posibles puntuaciones
+	/*Torus* torus = new Torus();
 	torus->SetPosition(Vector3D(2.0f, 3.0f, 1.0f));
 	torus->SetColor(Color(0.8f, 0.9f, 0.8f));
 	torus->SetOrientationSpeed(Vector3D(0.0f, 6.0f, 0.0f));
 	torus->SetIsAffectedByGravity(false);
-	mainScene->AddGameObject(torus);
+	mainScene->AddGameObject(torus);*/
 
-	Cuboid* back = new Cuboid();
+
+	//paredes
+	/*Cuboid* back = new Cuboid();
 	back->SetPosition(Vector3D(5.0f, 5.0f, -0.5f));
 	back->SetColor(Color(0.9f, 0.6f, 0.5f));
 	back->SetHeight(10.0f);
@@ -81,15 +67,6 @@ void Game::Create()
 	back->SetIsAffectedByGravity(false);
 	mainScene->AddGameObject(back);
 
-	Cuboid* floor = new Cuboid();
-	floor->SetPosition(Vector3D(5.0f, -0.5f, 5.0f));
-	floor->SetColor(Color(0.5f, 0.9f, 0.6f));
-	floor->SetHeight(1.0f);
-	floor->SetLength(10.0f);
-	floor->SetWidth(10.0f);
-	floor->SetIsAffectedByGravity(false);
-	mainScene->AddGameObject(floor);
-
 	Cuboid* right = new Cuboid();
 	right->SetPosition(Vector3D(10.5f, 5.0f, 5.0f));
 	right->SetColor(Color(0.6f, 0.5f, 0.9f));
@@ -97,7 +74,17 @@ void Game::Create()
 	right->SetLength(1.0f);
 	right->SetWidth(10.0f);
 	right->SetIsAffectedByGravity(false);
-	mainScene->AddGameObject(right);
+	mainScene->AddGameObject(right);*/
+
+	Cuboid* floor = new Cuboid();
+	floor->SetPosition(Vector3D(5.0f, -0.5f, 5.0f));
+	floor->SetColor(Color(0.5f, 0.9f, 0.6f));
+	floor->SetHeight(1.0f);
+	floor->SetLength(14.0f);
+	floor->SetWidth(1000.0f);
+	floor->SetIsAffectedByGravity(false);
+	mainScene->AddGameObject(floor);
+
 
 	this->scenes.push_back(mainScene);
 	this->activeScene = mainScene;

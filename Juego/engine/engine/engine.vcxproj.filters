@@ -37,6 +37,12 @@
     <Filter Include="Archivos de origen\Elements">
       <UniqueIdentifier>{77b70663-bee4-4f77-a43e-eb9d592862b6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Elements\Coche">
+      <UniqueIdentifier>{2da3e310-a7da-4869-b879-2bbaf707ecc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Elements\Coche">
+      <UniqueIdentifier>{522b03f7-ddd2-42ec-af4a-c223f48b067c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">

@@ -10,7 +10,7 @@ private:
 public:
 	Cube() : GameObject(), size(1.0) {}
 
-	Cube(Vector3D position, Color color, Vector3D speed, Vector3D orientation, float size = 1.0) :
+	Cube(Vector3D position, Color color, Vector3D speed, Vector3D orientation, float size = 1.50) :
 		GameObject(position, color, speed, orientation, Vector3D(), true), size(size) {}
 
 	inline float GetSize() const { return this->size; }

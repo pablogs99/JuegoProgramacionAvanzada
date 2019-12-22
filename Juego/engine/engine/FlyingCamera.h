@@ -20,6 +20,7 @@ public:
 
 	void ProcessMouseMovement(const int& x, const int& y);
 	void ProcessMouseClick(const int& button, const int& state, const int& x, const int& y);
+	void updateLateral(double dt);
 	void ProcessKeyPressed(unsigned char key, int px, int py);
 };
 

@@ -3,6 +3,7 @@
 #include <iostream>
 #include "FlyingCamera.h"
 
+
 void FlyingCamera::Render() {
 	glRotatef(GetOrientation().GetX(), 1.0, 0.0, 0.0);
 	glRotatef(GetOrientation().GetY(), 0.0, 1.0, 0.0);
@@ -44,16 +45,36 @@ void FlyingCamera::ProcessMouseClick(const int& button, const int& state, const 
 	}
 }
 
+
+int px = -1;
+int py = -1;
+double t = 0;
+double dt = 0.1;
+
+void FlyingCamera::updateLateral(double dt) {
+
+
+}
+
 void FlyingCamera::ProcessKeyPressed(unsigned char key, int px, int py)
 {
 	switch (key) {
 	case 'w':
 	case 'W':
 		this->Update(0.1f, Vector3D());
+		int px;
 		break;
 	case 's':
 	case 'S':
 		this->Update(-0.1f, Vector3D());
+		break;
+	case 'a':
+	case 'A':
+		this->updateLateral(dt * 5);
+		break;
+	case 'd':
+	case 'D':
+		this->updateLateral(-dt * 5);
 		break;
 	}
 }

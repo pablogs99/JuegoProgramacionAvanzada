@@ -131,7 +131,7 @@ void initGraphics()
 	glEnable(GL_LIGHTING);											// CÃ¡lculo de colores de los vÃ©rtices conforme a parÃ¡metros de iluminaciÃ³n
 	glEnable(GL_LIGHT0);											// Uso de luz 0 para cÃ¡lculo de iluminaciÃ³n
 	glEnable(GL_COLOR_MATERIAL);									// ParÃ¡metros de material aplicables al color
-	glClearColor(0.7f, 0.7f, 0.7f, 1.0f);							// Fija el color de fondo 
+	glClearColor(0.0f, 0.3f, 0.9f, 1.0f);							// Fija el color de fondo 
 	initObjects();
 }
 
