@@ -5,6 +5,7 @@
 #include "Torus.h"
 #include "Cuboid.h"
 
+
 void Game::Create() 
 {
 	Scene* mainScene = new(nothrow) Scene();
@@ -37,7 +38,7 @@ void Game::Create()
 	if (pointerToCubes != nullptr) {
 		for (int index = 0; index < 10; index++) {
 			pointerToCubes[index] = Cube(
-				Vector3D((1 + index * 0.1), (0.5), (1 - i+ 100 *0.1)),  //posición 
+				Vector3D((1 + index * 0.1), (0.5), (-10 - i+ 100 *0.1)),  //posición 
 				Color((0.2 + index * 0.5),(0.4 * 0.1),(0.7 * 0.1)), 
 				Vector3D((0.02 + index* 0.001),(0),(0)),  //velocidad
 				0.1 + 2 * 0.1);
@@ -78,13 +79,49 @@ void Game::Create()
 
 	Cuboid* floor = new Cuboid();
 	floor->SetPosition(Vector3D(5.0f, -0.5f, 5.0f));
-	floor->SetColor(Color(0.5f, 0.9f, 0.6f));
+	floor->SetColor(Color(0.4f, 0.4f, 0.4f));
 	floor->SetHeight(1.0f);
 	floor->SetLength(14.0f);
 	floor->SetWidth(1000.0f);
 	floor->SetIsAffectedByGravity(false);
 	mainScene->AddGameObject(floor);
 
+
+	Cuboid* pianoIZq = new Cuboid();
+	pianoIZq->SetPosition(Vector3D(-3.0f, -1.0f, 5.0f));
+	pianoIZq->SetColor(Color(120.0f, 1.0f, 1.0f));
+	pianoIZq->SetHeight(1.0f);
+	pianoIZq->SetLength(1.0f);
+	pianoIZq->SetWidth(1000.0f);
+	pianoIZq->SetIsAffectedByGravity(false);
+	mainScene->AddGameObject(pianoIZq);
+
+	Cuboid* pianoDer = new Cuboid();
+	pianoDer->SetPosition(Vector3D(13.0f, -1.0f, 5.0f));
+	pianoDer->SetColor(Color(120.0f, 1.0f, 1.0f));
+	pianoDer->SetHeight(1.0f);
+	pianoDer->SetLength(1.0f);
+	pianoDer->SetWidth(1000.0f);
+	pianoDer->SetIsAffectedByGravity(false);
+	mainScene->AddGameObject(pianoDer);
+
+
+	Cuboid* jugador = new Cuboid();
+	jugador->SetPosition(Vector3D(5.0f, 1.0f, 10.0f));
+	jugador->SetColor(Color(1.0f, 30.0f, 1.0f));
+	jugador->SetHeight(2.0f);
+	jugador->SetLength(2.0f);
+	jugador->SetWidth(2.0f);
+	jugador->SetIsAffectedByGravity(false);
+	mainScene->AddGameObject(jugador);
+
+	/*Modelo* coche = new Modelo("Formula1.obj");
+	coche->SetPosition(Vector3D(0, 0, 0));
+	coche->SetColor(Vector3D(1, 0, 0));
+	coche->SetOrientation(Vector3D(0, 90, 0));
+	mainScene->AddGameObject(coche);
+
+	coche->SetCamera(mainCamera);*/
 
 	this->scenes.push_back(mainScene);
 	this->activeScene = mainScene;
