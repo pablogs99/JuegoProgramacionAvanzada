@@ -108,4 +108,6 @@ void Game::ProcessKeyPressed(const unsigned char& key, const int& xPosition, con
 void Game::ProcessMouseClick(const int& button, const int& state, const int& xPosition, const int& yPosition) 
 {
 	this->activeScene->ProcessMouseClick(button, state, xPosition, yPosition);
+
+
 }

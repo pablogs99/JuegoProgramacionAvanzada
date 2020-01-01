@@ -68,6 +68,19 @@ void FlyingCamera::ProcessKeyPressed(unsigned char key, int px, int py)
 	case 'S':
 		this->Update(-0.1f, Vector3D());
 		break;
+
+	case 'j':
+	case 'J':
+		this->SetPosition(Vector3D(5.0f, 10.0f, 20.0f)); //main Camera
+		this->SetOrientation(Vector3D(20.0f, 0.0f, 0.0f));
+
+		break;
+	case 'k':
+	case 'K':
+		this->SetPosition(Vector3D(5.0f, 30.0f, 1.0f)); //camara Cenital
+		this->SetOrientation(Vector3D(90.0f, 0.0f, 0.0f));
+
+		break;
 	}
 }
 

@@ -36,6 +36,9 @@ void Scene::Render()
 
 void Scene::Update(const float& time)
 {
+	puntos += time;
+	cout << puntos << endl;
+
 	for (int idx = 0; idx < this->gameObjects.size(); idx++)
 	{
 		this->gameObjects[idx]->Update(time, this->GetGravity());
@@ -54,15 +57,12 @@ void Scene::Update(const float& time)
 		}
 		//Si los obstaculos llegan al final, vuelven a posicionarse al principio del mapa
 		//para dar una sensacion de obstaculos infinitos
-		if (this->gameObjects[idx]->GetPosition().GetZ() > 15 || 
+		if (this->gameObjects[idx]->GetPosition().GetZ() > 20 || 
 			this->gameObjects[idx]->GetPosition().GetZ() < -30) {
 
 			this->gameObjects[idx]->SetPosition(Vector3D((rand() % 13), (0.5), -25));
 		}
-		
-
 	}
-	 //actualizacion movimiento camara a lo largo del eje z.
 
 }
 
@@ -80,6 +80,7 @@ void Scene::ProcessKeyPressed(unsigned char key, int px, int py)
 {
 	this->player.ProcessKeyPressed(key, px, py);
 	this->camera.ProcessKeyPressed(key, px, py);
+
 }
 
 
