@@ -36,8 +36,19 @@ void Scene::Render()
 
 void Scene::Update(const float& time)
 {
-	puntos += time;
-	cout << puntos << endl;
+
+		puntos += time;
+		cout << puntos << endl;
+
+		if (puntos == 100) {
+			for (int idx = 0; idx < this->gameObjects.size(); idx++)
+			{
+				this->gameObjects[idx]->SetSpeed(Vector3D(0, 0, 0));
+			}
+			victoria = true;
+		}
+
+	
 
 	for (int idx = 0; idx < this->gameObjects.size(); idx++)
 	{

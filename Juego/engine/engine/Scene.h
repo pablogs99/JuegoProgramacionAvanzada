@@ -15,6 +15,8 @@ private:
 	vector<GameObject*> gameObjects;
 	Player player;
 	float puntos = 0;
+	bool victoria = false;
+	bool derrota = false;
 	Vector3D size;
 	Vector3D gravity;
 public:
