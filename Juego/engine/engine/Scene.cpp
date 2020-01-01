@@ -52,16 +52,19 @@ void Scene::Update(const float& time)
 			this->gameObjects[idx]->SetSpeed(Vector3D(this->gameObjects[idx]->GetSpeed().GetX(), 
 			this->gameObjects[idx]->GetSpeed().GetY() * -1, this->gameObjects[idx]->GetSpeed().GetZ()));
 		}
-		if (this->gameObjects[idx]->GetPosition().GetZ() > this->GetSize().GetZ() || 
-			this->gameObjects[idx]->GetPosition().GetZ() < 0) {
+		if (this->gameObjects[idx]->GetPosition().GetZ() > 15 || 
+			this->gameObjects[idx]->GetPosition().GetZ() < -30) {
 
-			this->gameObjects[idx]->SetSpeed(Vector3D(this->gameObjects[idx]->GetSpeed().GetX(), 
-			this->gameObjects[idx]->GetSpeed().GetY(), this->gameObjects[idx]->GetSpeed().GetZ() * -1));
+			this->gameObjects[idx]->SetPosition(Vector3D((rand() % 13), (0.5), -25));
+
+		
 		}
+		
 
 	}
 	 //actualizacion movimiento camara a lo largo del eje z.
 	
+//	this->camera.SetPosition(Vector3D(5.0f, 10.0f, jugador->GetPosition().GetZ()));
 
 }
 
@@ -78,6 +81,7 @@ void Scene::ProcessMouseClick(const int& button, const int& state, const int& x,
 void Scene::ProcessKeyPressed(unsigned char key, int px, int py)
 {
 	this->camera.ProcessKeyPressed(key, px, py);
+	this->player.ProcessKeyPressed(key, px, py);
 }
 
 

@@ -4,6 +4,7 @@
 #include "GameObject.h"
 #include "Camera.h"
 #include "FlyingCamera.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -12,6 +13,8 @@ class Scene
 private:
 	FlyingCamera camera;
 	vector<GameObject*> gameObjects;
+	Player player;
+
 	Vector3D size;
 	Vector3D gravity;
 public:
@@ -26,6 +29,7 @@ public:
 	inline void SetSize(const Vector3D& sizeToSet) { this->size = sizeToSet; }
 	inline FlyingCamera GetCamera() const { return this->camera; }
 	inline void SetCamera(FlyingCamera cameraToSet) { this->camera = cameraToSet; }
+
 
 	void AddGameObject(GameObject* objectToAdd);
 	void ClearScene();

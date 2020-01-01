@@ -68,14 +68,6 @@ void FlyingCamera::ProcessKeyPressed(unsigned char key, int px, int py)
 	case 'S':
 		this->Update(-0.1f, Vector3D());
 		break;
-	case 'a':
-	case 'A':
-		this->updateLateral(dt * 5);
-		break;
-	case 'd':
-	case 'D':
-		this->updateLateral(-dt * 5);
-		break;
 	}
 }
 

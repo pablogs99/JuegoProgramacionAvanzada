@@ -160,6 +160,7 @@
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="FlyingCamera.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Sphere.cpp" />
@@ -175,6 +176,7 @@
     <ClInclude Include="Cylinder.h" />
     <ClInclude Include="FlyingCamera.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Sphere.h" />
