@@ -54,20 +54,11 @@
     <ClCompile Include="Color.cpp">
       <Filter>Archivos de origen\Base</Filter>
     </ClCompile>
-    <ClCompile Include="Cube.cpp">
-      <Filter>Archivos de origen\Elements</Filter>
-    </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>Archivos de origen\Core</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>Archivos de origen\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Sphere.cpp">
-      <Filter>Archivos de origen\Elements</Filter>
-    </ClCompile>
-    <ClCompile Include="Teapot.cpp">
-      <Filter>Archivos de origen\Elements</Filter>
     </ClCompile>
     <ClCompile Include="Vector3D.cpp">
       <Filter>Archivos de origen\Base</Filter>
@@ -78,14 +69,26 @@
     <ClCompile Include="Game.cpp">
       <Filter>Archivos de origen\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Cylinder.cpp">
-      <Filter>Archivos de origen\Elements</Filter>
+    <ClCompile Include="Player.cpp">
+      <Filter>Archivos de origen\Elements\Coche</Filter>
     </ClCompile>
-    <ClCompile Include="Torus.cpp">
-      <Filter>Archivos de origen\Elements</Filter>
+    <ClCompile Include="Cube.cpp">
+      <Filter>Archivos de origen\Elements\Coche</Filter>
     </ClCompile>
     <ClCompile Include="Cuboid.cpp">
-      <Filter>Archivos de origen\Elements</Filter>
+      <Filter>Archivos de origen\Elements\Coche</Filter>
+    </ClCompile>
+    <ClCompile Include="Cylinder.cpp">
+      <Filter>Archivos de origen\Elements\Coche</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphere.cpp">
+      <Filter>Archivos de origen\Elements\Coche</Filter>
+    </ClCompile>
+    <ClCompile Include="Teapot.cpp">
+      <Filter>Archivos de origen\Elements\Coche</Filter>
+    </ClCompile>
+    <ClCompile Include="Torus.cpp">
+      <Filter>Archivos de origen\Elements\Coche</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,15 +97,6 @@
     </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Archivos de encabezado\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Cube.h">
-      <Filter>Archivos de encabezado\Elements</Filter>
-    </ClInclude>
-    <ClInclude Include="Sphere.h">
-      <Filter>Archivos de encabezado\Elements</Filter>
-    </ClInclude>
-    <ClInclude Include="Teapot.h">
-      <Filter>Archivos de encabezado\Elements</Filter>
     </ClInclude>
     <ClInclude Include="Color.h">
       <Filter>Archivos de encabezado\Base</Filter>
@@ -119,14 +113,26 @@
     <ClInclude Include="Game.h">
       <Filter>Archivos de encabezado\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Cylinder.h">
-      <Filter>Archivos de encabezado\Elements</Filter>
-    </ClInclude>
-    <ClInclude Include="Torus.h">
-      <Filter>Archivos de encabezado\Elements</Filter>
+    <ClInclude Include="Cube.h">
+      <Filter>Archivos de encabezado\Elements\Coche</Filter>
     </ClInclude>
     <ClInclude Include="Cuboid.h">
-      <Filter>Archivos de encabezado\Elements</Filter>
+      <Filter>Archivos de encabezado\Elements\Coche</Filter>
+    </ClInclude>
+    <ClInclude Include="Cylinder.h">
+      <Filter>Archivos de encabezado\Elements\Coche</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Archivos de encabezado\Elements\Coche</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>Archivos de encabezado\Elements\Coche</Filter>
+    </ClInclude>
+    <ClInclude Include="Teapot.h">
+      <Filter>Archivos de encabezado\Elements\Coche</Filter>
+    </ClInclude>
+    <ClInclude Include="Torus.h">
+      <Filter>Archivos de encabezado\Elements\Coche</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

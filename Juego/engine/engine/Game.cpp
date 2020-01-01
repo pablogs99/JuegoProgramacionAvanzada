@@ -17,14 +17,14 @@ void Game::Create()
 	mainCamera.SetSpeed(Vector3D(0.0f, .0f, -0.7f)); //posicion camara fija
 
 	//obstaculos
-	int numCubos = 4;
+	int numCubos = 5; // Son 4 en realidad porque index empieza en 1
 	Cube* pointerToCubes = new(nothrow) Cube[numCubos];
 	if (pointerToCubes != nullptr) {
-		for (int index = 0; index < numCubos; index++) {
+		for (int index = 1; index < numCubos; index++) {
 			pointerToCubes[index] = Cube(
 			
 				Vector3D((rand() % 13), (0.5), -25),  //posición 
-				Color((0.2 + index * 0.5), (0.4 * 0.1), (0.7 * 0.1)), //color
+				Color(( index * 0.5), (index * 0.1), ( 0.1)), //color
 				Vector3D((0.02 + index * 0.001), (0), (0.34 * index)),  //velocidad
 				0.1 + 2 * 0.1 //orientacion
 			); 
@@ -77,7 +77,8 @@ void Game::Create()
 	jugador->SetLength(2.0f);
 	jugador->SetWidth(2.0f);
 	jugador->SetIsAffectedByGravity(false);
-	mainScene->AddGameObject(jugador);
+	//mainScene->AddGameObject(jugador);
+	mainScene->setPlayer(*jugador);
 
 	this->scenes.push_back(mainScene);
 	this->activeScene = mainScene;
