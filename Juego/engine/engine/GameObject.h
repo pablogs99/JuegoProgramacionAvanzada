@@ -12,6 +12,7 @@ private:
 	Vector3D orientation;
 	Vector3D orientationSpeed;
 	bool isAffectedByGravity;
+	
 public:
 	GameObject() : position(Vector3D()), color(Color()), speed(Vector3D()), orientation(Vector3D()), orientationSpeed(Vector3D()), isAffectedByGravity(true) {}
 
@@ -33,5 +34,6 @@ public:
 
 	virtual void Render() = 0;
 	virtual void Update(const float& time, const Vector3D& gravity);
+	
 };
 

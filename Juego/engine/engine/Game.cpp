@@ -14,7 +14,20 @@ void Game::Create()
 
 	mainCamera.SetOrientation(Vector3D(20.0f, 0.0f, 0.0f));
 	mainScene->SetCamera(mainCamera);
-	mainCamera.SetSpeed(Vector3D(0.0f, .0f, -0.7f)); //posicion camara fija
+	mainCamera.SetSpeed(Vector3D(0.0f, .0f, -0.7f)); 
+
+	//Jugador
+	Player* jugador = new Player();
+	jugador->SetPosition(Vector3D(5.0f, 1.0f, 10.0f));
+	jugador->SetColor(Color(1.0f, 30.0f, 1.0f));
+	jugador->SetSpeed(Vector3D(0.4f, 0, 0));
+	jugador->SetHeight(2.0f);
+	jugador->SetLength(2.0f);
+	jugador->SetWidth(2.0f);
+	jugador->SetIsAffectedByGravity(false);
+	//mainScene->AddGameObject(jugador);
+	mainScene->setPlayer(*jugador);
+
 
 	//obstaculos
 	int numCubos = 5; // Son 4 en realidad porque index empieza en 1
@@ -22,17 +35,15 @@ void Game::Create()
 	if (pointerToCubes != nullptr) {
 		for (int index = 1; index < numCubos; index++) {
 			pointerToCubes[index] = Cube(
-			
 				Vector3D((rand() % 13), (0.5), -25),  //posición 
 				Color(( index * 0.5), (index * 0.1), ( 0.1)), //color
-				Vector3D((0.02 + index * 0.001), (0), (0.34 * index)),  //velocidad
+				Vector3D((0.07 + index * 0.001), (0), (0.34 * index)),  //velocidad
 				0.1 + 2 * 0.1 //orientacion
-			); 
+			);
 			pointerToCubes[index].SetIsAffectedByGravity(false);
-			mainScene->AddGameObject(pointerToCubes + index);
+			mainScene->AddObstacle(pointerToCubes + index);
 		}
 	}
-
 
 	 //para posibles puntuaciones
 	/*Torus* torus = new Torus();
@@ -70,15 +81,6 @@ void Game::Create()
 	pianoDer->SetIsAffectedByGravity(false);
 	mainScene->AddGameObject(pianoDer);
 
-	Player* jugador = new Player();
-	jugador->SetPosition(Vector3D(5.0f, 1.0f, 10.0f));
-	jugador->SetColor(Color(1.0f, 30.0f, 1.0f));
-	jugador->SetHeight(2.0f);
-	jugador->SetLength(2.0f);
-	jugador->SetWidth(2.0f);
-	jugador->SetIsAffectedByGravity(false);
-	//mainScene->AddGameObject(jugador);
-	mainScene->setPlayer(*jugador);
 
 	this->scenes.push_back(mainScene);
 	this->activeScene = mainScene;

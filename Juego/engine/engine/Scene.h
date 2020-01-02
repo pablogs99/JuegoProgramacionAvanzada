@@ -13,6 +13,7 @@ class Scene
 private:
 	FlyingCamera camera;
 	vector<GameObject*> gameObjects;
+	vector<GameObject*> obstacles;
 	Player player;
 	float puntos = 0;
 	bool victoria = false;
@@ -37,6 +38,7 @@ public:
 	void setPlayer(const Player& player){ this->player = player;}
 
 	void AddGameObject(GameObject* objectToAdd);
+	void AddObstacle(GameObject* objectToAdd);
 	void ClearScene();
 	void Render();
 	void Update(const float& time);

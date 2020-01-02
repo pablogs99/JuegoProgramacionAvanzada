@@ -5,20 +5,32 @@ void Scene::AddGameObject(GameObject* object)
 	this->gameObjects.push_back(object);
 }
 
+void Scene::AddObstacle(GameObject* object)
+{
+	this->obstacles.push_back(object);
+}
+
 void Scene::ClearScene()
 {
 	this->gameObjects.clear();
+	this->obstacles.clear();
 }
 
 void Scene::Render()
 {
 	this->camera.Render();
 	this->player.Render();
+
 	// tres formas de recorrer el vector de s�lidos
 	//1.- bucle for con �ndice comprobando con el tama�o del vector
 	for (int idx = 0; idx < this->gameObjects.size(); idx++)
 	{
 		this->gameObjects[idx]->Render();
+		
+	}
+	for (int idx = 0; idx < this->obstacles.size(); idx++)
+	{
+		this->obstacles[idx]->Render();
 	}
 
 	//2.- usando un bucle for autom�tico sobre el vector
@@ -36,45 +48,69 @@ void Scene::Render()
 
 void Scene::Update(const float& time)
 {
-
-		puntos += time;
-		cout << puntos << endl;
-
-		if (puntos == 100) {
-			for (int idx = 0; idx < this->gameObjects.size(); idx++)
-			{
-				this->gameObjects[idx]->SetSpeed(Vector3D(0, 0, 0));
-			}
-			victoria = true;
-		}
-
 	
+		/*
+				puntos += time;
+				cout << puntos << endl;
 
-	for (int idx = 0; idx < this->gameObjects.size(); idx++)
-	{
-		this->gameObjects[idx]->Update(time, this->GetGravity());
+				if (puntos == 100) {
+					for (int idx = 0; idx < this->gameObjects.size(); idx++)
+					{
+						this->gameObjects[idx]->SetSpeed(Vector3D(0, 0, 0));
+					}
+					victoria = true;
+				}*/
 
-		if (this->gameObjects[idx]->GetPosition().GetX() > this->GetSize().GetX() 
-			|| this->gameObjects[idx]->GetPosition().GetX() < 0) {
+				//Comprobar colisiones
+		for (int idx = 0; idx < this->obstacles.size(); idx++)
+		{
+			if (obstacles[idx]->GetPosition().GetZ() < 11.7) { //Para que no haya colision despues de que el obstaculo sobrepase al jugador
+				// Colision eje X
+				bool collisionX = obstacles[idx]->GetPosition().GetX() > this->player.getColision1() && obstacles[idx]->GetPosition().GetX() < this->player.getColision2();
 
-			this->gameObjects[idx]->SetSpeed(Vector3D(this->gameObjects[idx]->GetSpeed().GetX() * -1,
-			this->gameObjects[idx]->GetSpeed().GetY(), this->gameObjects[idx]->GetSpeed().GetZ()));
+				// Colision eje Y
+				bool collisionZ = obstacles[idx]->GetPosition().GetZ() >= this->player.GetPosition().GetZ();
+
+				// Colision solo si ha habido colision en los dos ejes
+				if (collisionX && collisionZ) {
+					this->player.SetSpeed(Vector3D(0, 0, 0));
+					for (int idx = 0; idx < this->obstacles.size(); idx++)
+					{
+						this->obstacles[idx]->SetSpeed(Vector3D(0, 0, 0));
+					}
+					derrota = true;
+				}
+			}
 		}
-		if (this->gameObjects[idx]->GetPosition().GetY() > this->GetSize().GetY() || 
-			this->gameObjects[idx]->GetPosition().GetY() < 0) {
 
-			this->gameObjects[idx]->SetSpeed(Vector3D(this->gameObjects[idx]->GetSpeed().GetX(), 
-			this->gameObjects[idx]->GetSpeed().GetY() * -1, this->gameObjects[idx]->GetSpeed().GetZ()));
-		}
-		//Si los obstaculos llegan al final, vuelven a posicionarse al principio del mapa
-		//para dar una sensacion de obstaculos infinitos
-		if (this->gameObjects[idx]->GetPosition().GetZ() > 20 || 
-			this->gameObjects[idx]->GetPosition().GetZ() < -30) {
+		for (int idx = 0; idx < this->obstacles.size(); idx++)
+		{
+			this->obstacles[idx]->Update(time, this->GetGravity());
 
-			this->gameObjects[idx]->SetPosition(Vector3D((rand() % 13), (0.5), -25));
+			if (this->obstacles[idx]->GetPosition().GetX() > this->GetSize().GetX()
+				|| this->obstacles[idx]->GetPosition().GetX() < 0) {
+
+				this->obstacles[idx]->SetSpeed(Vector3D(this->obstacles[idx]->GetSpeed().GetX() * -1,
+					this->obstacles[idx]->GetSpeed().GetY(), this->obstacles[idx]->GetSpeed().GetZ()));
+			}
+			if (this->obstacles[idx]->GetPosition().GetY() > this->GetSize().GetY() ||
+				this->obstacles[idx]->GetPosition().GetY() < 0) {
+
+				this->obstacles[idx]->SetSpeed(Vector3D(this->obstacles[idx]->GetSpeed().GetX(),
+					this->obstacles[idx]->GetSpeed().GetY() * -1, this->obstacles[idx]->GetSpeed().GetZ()));
+			}
+			//Si los obstaculos llegan al final, vuelven a posicionarse al principio del mapa
+			//para dar una sensacion de obstaculos infinitos
+			if (this->obstacles[idx]->GetPosition().GetZ() > 20 ||
+				this->obstacles[idx]->GetPosition().GetZ() < -30) {
+
+				this->obstacles[idx]->SetPosition(Vector3D((rand() % 13), (0.5), -25));
+			}
 		}
+	
+	if (derrota) {
+		cout << "Derrota" << endl;
 	}
-
 }
 
 void Scene::ProcessMouseMovement(const int& x, const int& y)

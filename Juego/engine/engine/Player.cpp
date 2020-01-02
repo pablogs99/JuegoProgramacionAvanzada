@@ -15,41 +15,30 @@ void Player::Render() {
 
 void Player::ProcessKeyPressed(unsigned char key, int px, int py)
 {
+	float velocidad = this->GetSpeed().GetX(); // velocidad = 0.4f
 	switch (key) {
 	case 'a':
 	case 'A':
-		/*if (this->GetPosition().GetZ() > -9.0) {
-			
-			this->getposition().setz(this->getposition().getz() - this->getspeed().getz());
-			collisionpoints[0] -= this->getspeed().getz();
-			collisionpoints[2] -= this->getspeed().getz();
-			collisionpoints[4] -= this->getspeed().getz();
-			collisionpoints[6] -= this->getspeed().getz();
-			collisionpoints[8] -= this->getspeed().getz();
-			this->setposition(this->getposition());
-		}*/
-		if (this->GetPosition().GetX() > -1.0f) {
-			this->SetPosition(Vector3D(this->GetPosition().GetX() - 0.4f, 1.0f, 10.0f));
 
-			std::cout << "Pos X -> " << this->GetPosition().GetX() << std::endl;
+		if (this->GetPosition().GetX() > -1.0f) { //para no salirse de los bordes
+			 this->SetPosition(Vector3D(this->GetPosition().GetX() - velocidad, 1.0f, 10.0f));
+
+			 colision1 -= velocidad;
+			 colision2 -= velocidad;
+
+			 std::cout << " X: " << this->GetPosition().GetX() << std::endl;
 		}
 		break;
 	case 'd':
 	case 'D':
-		/*if (this->GetPosition().GetZ() < 19.0) {
-			
-			this->GetPosition().SetZ(this->GetPosition().GetZ() + this->GetSpeed().GetZ());
-			collisionPoints[0] += this->GetSpeed().GetZ();
-			collisionPoints[2] += this->GetSpeed().GetZ();
-			collisionPoints[4] += this->GetSpeed().GetZ();
-			collisionPoints[6] += this->GetSpeed().GetZ();
-			collisionPoints[8] += this->GetSpeed().GetZ();
-			this->SetPosition(this->GetPosition());
-		}*/
-		if (this->GetPosition().GetX() < 11.0f) {
-			this->SetPosition(Vector3D(this->GetPosition().GetX() + 0.4f, 1.0f, 10.0f));
 
-			std::cout << "Pos X -> " << this->GetPosition().GetX() << std::endl;
+		if (this->GetPosition().GetX() < 10.9f) {
+			this->SetPosition(Vector3D(this->GetPosition().GetX() + velocidad, 1.0f, 10.0f));
+
+			colision1 += velocidad;
+			colision2 += velocidad;
+
+			std::cout << " X: " << this->GetPosition().GetX() << std::endl;
 		}
 			break;
 		
