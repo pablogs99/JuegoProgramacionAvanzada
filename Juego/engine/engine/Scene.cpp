@@ -49,17 +49,18 @@ void Scene::Render()
 void Scene::Update(const float& time)
 {
 	
-		/*
-				puntos += time;
-				cout << puntos << endl;
+	
+		puntos += time;
+		cout << puntos << endl;
 
-				if (puntos == 100) {
-					for (int idx = 0; idx < this->gameObjects.size(); idx++)
-					{
-						this->gameObjects[idx]->SetSpeed(Vector3D(0, 0, 0));
-					}
-					victoria = true;
-				}*/
+		if (puntos == 100) {
+			this->player.SetSpeed(Vector3D(0, 0, 0));
+			for (int idx = 0; idx < this->obstacles.size(); idx++)
+			{
+				this->obstacles[idx]->SetSpeed(Vector3D(0, 0, 0));
+			}
+			victoria = true;
+		}
 
 				//Comprobar colisiones
 		for (int idx = 0; idx < this->obstacles.size(); idx++)
@@ -110,6 +111,9 @@ void Scene::Update(const float& time)
 	
 	if (derrota) {
 		cout << "Derrota" << endl;
+	}
+	if (victoria) {
+		cout << "Victoria" << endl;
 	}
 }
 
