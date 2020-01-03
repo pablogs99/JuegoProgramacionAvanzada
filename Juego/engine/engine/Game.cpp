@@ -35,9 +35,9 @@ void Game::Create()
 	if (pointerToCubes != nullptr) {
 		for (int index = 1; index < numCubos; index++) {
 			pointerToCubes[index] = Cube(
-				Vector3D((rand() % 13), (0.5), -25),  //posición 
+				Vector3D((rand() % 13), (0.5), -25),  //posición  //-25
 				Color(( index * 0.5), (index * 0.1), ( 0.1)), //color
-				Vector3D((0.07 + index * 0.001), (0), (0.34 * index)),  //velocidad
+				Vector3D((0.07 + index * 0.001), (0), (0.34 * index)),  //velocidad 0.34
 				0.1 + 2 * 0.1 //orientacion
 			);
 			pointerToCubes[index].SetIsAffectedByGravity(false);

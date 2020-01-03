@@ -25,8 +25,6 @@ void Player::ProcessKeyPressed(unsigned char key, int px, int py)
 
 			 colision1 -= velocidad;
 			 colision2 -= velocidad;
-
-			 std::cout << " X: " << this->GetPosition().GetX() << std::endl;
 		}
 		break;
 	case 'd':
@@ -37,8 +35,6 @@ void Player::ProcessKeyPressed(unsigned char key, int px, int py)
 
 			colision1 += velocidad;
 			colision2 += velocidad;
-
-			std::cout << " X: " << this->GetPosition().GetX() << std::endl;
 		}
 			break;
 		

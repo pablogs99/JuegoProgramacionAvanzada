@@ -48,11 +48,12 @@ void Scene::Render()
 
 void Scene::Update(const float& time)
 {
-	
-	
+	if (!victoria && !derrota) {
+
 		puntos += time;
 		cout << puntos << endl;
-
+		
+		//Si llegamos a los 100 puntos, se para el juego y ganamos
 		if (puntos == 100) {
 			this->player.SetSpeed(Vector3D(0, 0, 0));
 			for (int idx = 0; idx < this->obstacles.size(); idx++)
@@ -62,7 +63,7 @@ void Scene::Update(const float& time)
 			victoria = true;
 		}
 
-				//Comprobar colisiones
+		//Comprobar colisiones
 		for (int idx = 0; idx < this->obstacles.size(); idx++)
 		{
 			if (obstacles[idx]->GetPosition().GetZ() < 11.7) { //Para que no haya colision despues de que el obstaculo sobrepase al jugador
@@ -73,6 +74,7 @@ void Scene::Update(const float& time)
 				bool collisionZ = obstacles[idx]->GetPosition().GetZ() >= this->player.GetPosition().GetZ();
 
 				// Colision solo si ha habido colision en los dos ejes
+				// Si hay colision se para el juego y perdemos
 				if (collisionX && collisionZ) {
 					this->player.SetSpeed(Vector3D(0, 0, 0));
 					for (int idx = 0; idx < this->obstacles.size(); idx++)
@@ -108,12 +110,14 @@ void Scene::Update(const float& time)
 				this->obstacles[idx]->SetPosition(Vector3D((rand() % 13), (0.5), -25));
 			}
 		}
-	
-	if (derrota) {
-		cout << "Derrota" << endl;
-	}
-	if (victoria) {
-		cout << "Victoria" << endl;
+
+		if (derrota) {
+			cout << "Derrota" << endl;
+		}
+		if (victoria) {
+			cout << "Victoria" << endl;
+		}
+		
 	}
 }
 
