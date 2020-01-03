@@ -15,7 +15,7 @@ void Player::Render() {
 
 void Player::ProcessKeyPressed(unsigned char key, int px, int py)
 {
-	float velocidad = this->GetSpeed().GetX(); // velocidad = 0.4f
+	float velocidad = this->GetSpeed().GetX(); // velocidad = 0.45f
 	switch (key) {
 	case 'a':
 	case 'A':
@@ -23,7 +23,7 @@ void Player::ProcessKeyPressed(unsigned char key, int px, int py)
 		if (this->GetPosition().GetX() > -1.0f) { //para no salirse de los bordes
 			 this->SetPosition(Vector3D(this->GetPosition().GetX() - velocidad, 1.0f, 10.0f));
 
-			 colision1 -= velocidad;
+			 colision1 -= velocidad; //movemos los puntos de colision
 			 colision2 -= velocidad;
 		}
 		break;

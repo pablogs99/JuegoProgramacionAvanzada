@@ -53,8 +53,8 @@ void Scene::Update(const float& time)
 		puntos += time;
 		cout << puntos << endl;
 		
-		//Si llegamos a los 100 puntos, se para el juego y ganamos
-		if (puntos == 100) {
+		//Si llegamos a los 300 puntos, se para el juego y ganamos
+		if (puntos == 300) {
 			this->player.SetSpeed(Vector3D(0, 0, 0));
 			for (int idx = 0; idx < this->obstacles.size(); idx++)
 			{
@@ -70,7 +70,7 @@ void Scene::Update(const float& time)
 				// Colision eje X
 				bool collisionX = obstacles[idx]->GetPosition().GetX() > this->player.getColision1() && obstacles[idx]->GetPosition().GetX() < this->player.getColision2();
 
-				// Colision eje Y
+				// Colision eje Z
 				bool collisionZ = obstacles[idx]->GetPosition().GetZ() >= this->player.GetPosition().GetZ();
 
 				// Colision solo si ha habido colision en los dos ejes
@@ -112,10 +112,12 @@ void Scene::Update(const float& time)
 		}
 
 		if (derrota) {
-			cout << "Derrota" << endl;
+			cout << "HAS PERDIDO!" << endl;
+			cout << "PULSA M PARA VOLVER A INTENTARLO" << endl;
 		}
 		if (victoria) {
-			cout << "Victoria" << endl;
+			cout << "HAS GANADO!" << endl;
+			cout << "PULSA M PARA VOLVER A JUGAR" << endl;
 		}
 		
 	}

@@ -20,7 +20,7 @@ void Game::Create()
 	Player* jugador = new Player();
 	jugador->SetPosition(Vector3D(5.0f, 1.0f, 10.0f));
 	jugador->SetColor(Color(1.0f, 30.0f, 1.0f));
-	jugador->SetSpeed(Vector3D(0.4f, 0, 0));
+	jugador->SetSpeed(Vector3D(0.45f, 0, 0));
 	jugador->SetHeight(2.0f);
 	jugador->SetLength(2.0f);
 	jugador->SetWidth(2.0f);
@@ -30,14 +30,14 @@ void Game::Create()
 
 
 	//obstaculos
-	int numCubos = 5; // Son 4 en realidad porque index empieza en 1
+	int numCubos = 5; // Son 4 en realidad porque index empieza en 1 para que la velocidad no sea 0
 	Cube* pointerToCubes = new(nothrow) Cube[numCubos];
 	if (pointerToCubes != nullptr) {
 		for (int index = 1; index < numCubos; index++) {
 			pointerToCubes[index] = Cube(
-				Vector3D((rand() % 13), (0.5), -25),  //posición  //-25
+				Vector3D((rand() % 13), (0.5), -25),  //posición 
 				Color(( index * 0.5), (index * 0.1), ( 0.1)), //color
-				Vector3D((0.07 + index * 0.001), (0), (0.34 * index)),  //velocidad 0.34
+				Vector3D((0.07 + index * 0.001), (0), (0.34 * index)),  //velocidad 
 				0.1 + 2 * 0.1 //orientacion
 			);
 			pointerToCubes[index].SetIsAffectedByGravity(false);
@@ -81,7 +81,6 @@ void Game::Create()
 	pianoDer->SetIsAffectedByGravity(false);
 	mainScene->AddGameObject(pianoDer);
 
-
 	this->scenes.push_back(mainScene);
 	this->activeScene = mainScene;
 }
@@ -94,7 +93,6 @@ void Game::Render()
 void Game::Update()
 {
 	this->activeScene->Update(this->deltaTime);
-	
 }
 
 void Game::ProcessMouseMovement(const int& xPosition, const int& yPosition) 
@@ -105,11 +103,17 @@ void Game::ProcessMouseMovement(const int& xPosition, const int& yPosition)
 void Game::ProcessKeyPressed(const unsigned char& key, const int& xPosition, const int& yPosition)
 {
 	this->activeScene->ProcessKeyPressed(key, xPosition, yPosition);
+
+	switch (key) {
+	case 'm':
+	case 'M':
+		this->activeScene->ClearScene(); //Reiniciar nivel
+		this->Create();
+		break;
+	}
 }
 
 void Game::ProcessMouseClick(const int& button, const int& state, const int& xPosition, const int& yPosition) 
 {
 	this->activeScene->ProcessMouseClick(button, state, xPosition, yPosition);
-
-
 }

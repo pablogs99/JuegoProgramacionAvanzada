@@ -7,8 +7,8 @@ private:
 	float length;										
 	float width;										
 
-	float colision1 = 3;
-	float colision2 = 6.8;
+	float colision1 = 3.2; //Lado izquierdo
+	float colision2 = 6.8; //Lado derecho
 
 public:
 	Player(): GameObject(), height(1.0f), length(2.0f), width(0.5f) {}
@@ -24,8 +24,6 @@ public:
 	inline float getColision2() { return colision2; }
 
 	void Render();
-	bool checkCollisionZX(const float& z, const float& x) { return false; };
-
 	void ProcessKeyPressed(unsigned char key, int px, int py);
 };
 
