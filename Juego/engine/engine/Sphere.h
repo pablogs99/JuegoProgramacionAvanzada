@@ -11,6 +11,7 @@ private:
 	int stacks;
 
 public:
+	Sphere(float radius = 1.0, int slices = 20, int stacks = 20){}
 	Sphere(Vector3D position, Color color, Vector3D speed, Vector3D orientation, float radius = 1.0, int slices = 20, int stacks = 20) :
 		GameObject(position, color, speed, orientation, Vector3D(), true), radius(radius), slices(slices), stacks(stacks) {}
 

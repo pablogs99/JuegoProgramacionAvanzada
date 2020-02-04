@@ -5,6 +5,8 @@
 #include "Torus.h"
 #include "Cuboid.h"
 #include "Player.h"
+#include "ObstaculoCubo.h"
+#include "ObstaculoEsfera.h"
 
 void Game::Create() 
 {
@@ -19,29 +21,37 @@ void Game::Create()
 	//Jugador
 	Player* jugador = new Player();
 	jugador->SetPosition(Vector3D(5.0f, 1.0f, 10.0f));
-	jugador->SetColor(Color(1.0f, 30.0f, 1.0f));
 	jugador->SetSpeed(Vector3D(0.45f, 0, 0));
-	jugador->SetHeight(2.0f);
-	jugador->SetLength(2.0f);
-	jugador->SetWidth(2.0f);
-	jugador->SetIsAffectedByGravity(false);
-	//mainScene->AddGameObject(jugador);
 	mainScene->setPlayer(*jugador);
 
-
-	//obstaculos
-	int numCubos = 5; // Son 4 en realidad porque index empieza en 1 para que la velocidad no sea 0
-	Cube* pointerToCubes = new(nothrow) Cube[numCubos];
+	//obstaculos Cubos
+	int numCubos = 3; // Son 4 en realidad porque index empieza en 1 para que la velocidad no sea 0
+	ObstaculoCubo* pointerToCubes = new(nothrow) ObstaculoCubo[numCubos];
 	if (pointerToCubes != nullptr) {
 		for (int index = 1; index < numCubos; index++) {
-			pointerToCubes[index] = Cube(
+			pointerToCubes[index] = ObstaculoCubo(
 				Vector3D((rand() % 13), (0.5), -25),  //posición 
-				Color(( index * 0.5), (index * 0.1), ( 0.1)), //color
-				Vector3D((0.07 + index * 0.001), (0), (0.34 * index)),  //velocidad 
+				Color((1), (1), (1)), //color
+				Vector3D((0.07 + index * 0.001), (0), (0.6 * index)),  //velocidad 
 				0.1 + 2 * 0.1 //orientacion
 			);
 			pointerToCubes[index].SetIsAffectedByGravity(false);
 			mainScene->AddObstacle(pointerToCubes + index);
+		}
+	}
+	//obstaculos Esferas
+	int numEsferas = 3;
+	ObstaculoEsfera* pointerToSpheres = new(nothrow) ObstaculoEsfera[numEsferas];
+	if (pointerToSpheres != nullptr) {
+		for (int index = 1; index < numEsferas; index++) {
+			pointerToSpheres[index] = ObstaculoEsfera(
+				Vector3D((rand() % 13), (0.8), -25),  //posición 
+				Color((0.5), (0.5), (0.5)), 
+				Vector3D((0.07 + index * 0.001), (0), (0.75 * index)),  //velocidad 
+				0.1 + 2 * 0.1 //orientacion
+			);
+			pointerToSpheres[index].SetIsAffectedByGravity(false);
+			mainScene->AddObstacle(pointerToSpheres + index);
 		}
 	}
 
