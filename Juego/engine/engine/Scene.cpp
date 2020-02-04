@@ -20,7 +20,10 @@ void Scene::Render()
 {
 	this->camera.Render();
 	this->player.Render();
-	this->powerUp.Render();
+	if (!powerUpColision) {
+		this->powerUp->Render();
+	}
+	
 
 	for (int idx = 0; idx < this->gameObjects.size(); idx++)
 	{
@@ -41,10 +44,10 @@ void Scene::Update(const float& time)
 		this->puntos += time;
 		cout << puntos << endl;
 
-
+		//A los 50 puntos aparece el anillo powerUp que nos aumentara la velocidad de movimiento
 		if (puntos == 50) {
-			this->powerUp.SetPosition(Vector3D(6.0f, 1.2f, -25.0f));
-			this->powerUp.SetSpeed(Vector3D(0.0f, 0.0f, 0.5f));
+			this->powerUp->SetPosition(Vector3D(6.0f, 1.2f, -25.0f));
+			this->powerUp->SetSpeed(Vector3D(0.0f, 0.0f, 0.5f));
 		}
 		//Si llegamos a los 300 puntos, se para el juego y ganamos
 		if (puntos == 300) {
@@ -79,20 +82,20 @@ void Scene::Update(const float& time)
 			}
 		}
 		//Colision con el PowerUp
+			if (powerUp->GetPosition().GetZ() < 11.7) {
+				bool collisionX = powerUp->GetPosition().GetX() > this->player.getColision1() && powerUp->GetPosition().GetX() < this->player.getColision2();
 
-			if (powerUp.GetPosition().GetZ() < 11.7) {
-				bool collisionX = powerUp.GetPosition().GetX() > this->player.getColision1() && powerUp.GetPosition().GetX() < this->player.getColision2();
-
-				bool collisionZ = powerUp.GetPosition().GetZ() >= this->player.GetPosition().GetZ();
+				bool collisionZ = powerUp->GetPosition().GetZ() >= this->player.GetPosition().GetZ();
 		
 				if (collisionX && collisionZ) {
 					this->player.SetSpeed(Vector3D(0.9, 0, 0));
-					powerUp.SetSpeed(Vector3D(0, 0, 0));
+					powerUpColision = true;
 					cout << "POWER UP DE VELOCIDAD!!!" << endl;
+					//Liberar memoria del powerUp
+					delete this->powerUp;
 				}
 			}
 		
-
 		for (int idx = 0; idx < this->obstacles.size(); idx++)
 		{
 			this->obstacles[idx]->Update(time, this->GetGravity());
@@ -117,7 +120,10 @@ void Scene::Update(const float& time)
 				this->obstacles[idx]->SetPosition(Vector3D((rand() % 13), (0.5), -25));
 			}
 		}
-		this->powerUp.Update(time, this->GetGravity());
+		//Mientras que no haya colisionado el powerUp, seguimos actualizandolo
+		if (!powerUpColision) {
+			this->powerUp->Update(time, this->GetGravity());
+		}
 
 		if (derrota) {
 			cout << "HAS PERDIDO!" << endl;

@@ -15,10 +15,11 @@ private:
 	vector<GameObject*> gameObjects;
 	vector<GameObject*> obstacles;
 	Player player;
-	PowerUp powerUp;
+	PowerUp* powerUp;
 	float puntos = 0;
 	bool victoria = false;
 	bool derrota = false;
+	bool powerUpColision = false;
 	Vector3D size;
 	Vector3D gravity;
 public:
@@ -38,8 +39,9 @@ public:
 	Player getPlayer() { return this->player; }
 	void setPlayer(const Player& player){ this->player = player;}
 
-	PowerUp getPower() { return this->powerUp; }
-	void setPower(const PowerUp& power) { this->powerUp = power; }
+	PowerUp* getPower() { return this->powerUp; }
+	void setPower(PowerUp* power) { this->powerUp = power; }
+	bool getPowerColision() { return this->powerUpColision; }
 
 	void AddGameObject(GameObject* objectToAdd);
 	void AddObstacle(GameObject* objectToAdd);

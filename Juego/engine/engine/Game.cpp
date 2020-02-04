@@ -60,9 +60,8 @@ void Game::Create()
 	PowerUp* powerUp = new PowerUp();
 	powerUp->SetPosition(Vector3D(6.0f, -4.2f, -25.0f)); //y = 1.2
 	powerUp->SetOrientationSpeed(Vector3D(0.0f, 20.0f, 0.0f));
-	mainScene->setPower(*powerUp);
+	mainScene->setPower(powerUp);
 	
-
 
 	Cuboid* floor = new Cuboid();
 	floor->SetPosition(Vector3D(5.0f, -0.5f, 5.0f));
