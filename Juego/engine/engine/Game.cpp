@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "ObstaculoCubo.h"
 #include "ObstaculoEsfera.h"
+#include "PowerUp.h"
 
 void Game::Create() 
 {
@@ -55,13 +56,13 @@ void Game::Create()
 		}
 	}
 
-	 //para posibles puntuaciones
-	/*Torus* torus = new Torus();
-	torus->SetPosition(Vector3D(2.0f, 3.0f, 1.0f));
-	torus->SetColor(Color(0.8f, 0.9f, 0.8f));
-	torus->SetOrientationSpeed(Vector3D(0.0f, 6.0f, 0.0f));
-	torus->SetIsAffectedByGravity(false);
-	mainScene->AddGameObject(torus);*/
+	//Anillo
+	PowerUp* powerUp = new PowerUp();
+	powerUp->SetPosition(Vector3D(6.0f, -4.2f, -25.0f)); //y = 1.2
+	powerUp->SetOrientationSpeed(Vector3D(0.0f, 20.0f, 0.0f));
+	mainScene->setPower(*powerUp);
+	
+
 
 	Cuboid* floor = new Cuboid();
 	floor->SetPosition(Vector3D(5.0f, -0.5f, 5.0f));

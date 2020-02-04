@@ -17,7 +17,6 @@ public:
 		this->SetIsAffectedByGravity(false);
 	}
 
-
 	inline float getColision1() { return colision1; }
 	inline float getColision2() { return colision2; }
 

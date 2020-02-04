@@ -5,7 +5,7 @@
 #include "Camera.h"
 #include "FlyingCamera.h"
 #include "Player.h"
-
+#include "PowerUp.h"
 using namespace std;
 
 class Scene
@@ -15,6 +15,7 @@ private:
 	vector<GameObject*> gameObjects;
 	vector<GameObject*> obstacles;
 	Player player;
+	PowerUp powerUp;
 	float puntos = 0;
 	bool victoria = false;
 	bool derrota = false;
@@ -36,6 +37,9 @@ public:
 	inline void SetCamera(FlyingCamera cameraToSet) { this->camera = cameraToSet; }
 	Player getPlayer() { return this->player; }
 	void setPlayer(const Player& player){ this->player = player;}
+
+	PowerUp getPower() { return this->powerUp; }
+	void setPower(const PowerUp& power) { this->powerUp = power; }
 
 	void AddGameObject(GameObject* objectToAdd);
 	void AddObstacle(GameObject* objectToAdd);

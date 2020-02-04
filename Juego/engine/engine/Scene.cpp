@@ -20,9 +20,8 @@ void Scene::Render()
 {
 	this->camera.Render();
 	this->player.Render();
+	this->powerUp.Render();
 
-	// tres formas de recorrer el vector de s�lidos
-	//1.- bucle for con �ndice comprobando con el tama�o del vector
 	for (int idx = 0; idx < this->gameObjects.size(); idx++)
 	{
 		this->gameObjects[idx]->Render();
@@ -33,26 +32,20 @@ void Scene::Render()
 		this->obstacles[idx]->Render();
 	}
 
-	//2.- usando un bucle for autom�tico sobre el vector
-	//for (GameObject* gameObjectInVector : this->gameObjects)
-	//{
-	//	gameObjectInVector->Render();
-	//}
-
-	//3.- empleando un iterador que proporciona la clase vector
-	//for (vector<GameObject*>::iterator it = this->gameObjects.begin(); it != this->gameObjects.end(); ++it)
-	//{
-	//	(*it)->Render();
-	//}
 }
 
 void Scene::Update(const float& time)
 {
 	if (!victoria && !derrota) {
 
-		puntos += time;
+		this->puntos += time;
 		cout << puntos << endl;
-		
+
+
+		if (puntos == 50) {
+			this->powerUp.SetPosition(Vector3D(6.0f, 1.2f, -25.0f));
+			this->powerUp.SetSpeed(Vector3D(0.0f, 0.0f, 0.5f));
+		}
 		//Si llegamos a los 300 puntos, se para el juego y ganamos
 		if (puntos == 300) {
 			this->player.SetSpeed(Vector3D(0, 0, 0));
@@ -85,6 +78,20 @@ void Scene::Update(const float& time)
 				}
 			}
 		}
+		//Colision con el PowerUp
+
+			if (powerUp.GetPosition().GetZ() < 11.7) {
+				bool collisionX = powerUp.GetPosition().GetX() > this->player.getColision1() && powerUp.GetPosition().GetX() < this->player.getColision2();
+
+				bool collisionZ = powerUp.GetPosition().GetZ() >= this->player.GetPosition().GetZ();
+		
+				if (collisionX && collisionZ) {
+					this->player.SetSpeed(Vector3D(0.9, 0, 0));
+					powerUp.SetSpeed(Vector3D(0, 0, 0));
+					cout << "POWER UP DE VELOCIDAD!!!" << endl;
+				}
+			}
+		
 
 		for (int idx = 0; idx < this->obstacles.size(); idx++)
 		{
@@ -110,6 +117,7 @@ void Scene::Update(const float& time)
 				this->obstacles[idx]->SetPosition(Vector3D((rand() % 13), (0.5), -25));
 			}
 		}
+		this->powerUp.Update(time, this->GetGravity());
 
 		if (derrota) {
 			cout << "HAS PERDIDO!" << endl;
