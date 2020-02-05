@@ -131,10 +131,12 @@ void Scene::Update(const float& time)
 
 		if (derrota) {
 			cout << "HAS PERDIDO!" << endl;
+			rank.crearRanking(puntos);
 			cout << "PULSA M PARA VOLVER A INTENTARLO" << endl;
 		}
 		if (victoria) {
 			cout << "HAS GANADO!" << endl;
+			rank.crearRanking(puntos);
 			cout << "PULSA M PARA VOLVER A JUGAR" << endl;
 		}
 		

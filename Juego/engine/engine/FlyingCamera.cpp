@@ -59,7 +59,7 @@ void FlyingCamera::updateLateral(double dt) {
 void FlyingCamera::ProcessKeyPressed(unsigned char key, int px, int py)
 {
 	switch (key) {
-	case 'w':
+	/*case 'w':
 	case 'W':
 		this->Update(0.1f, Vector3D());
 		int px;
@@ -68,6 +68,7 @@ void FlyingCamera::ProcessKeyPressed(unsigned char key, int px, int py)
 	case 'S':
 		this->Update(-0.1f, Vector3D());
 		break;
+	*/
 
 	case 'j':
 	case 'J':

@@ -6,6 +6,8 @@
 #include "FlyingCamera.h"
 #include "Player.h"
 #include "PowerUp.h"
+#include "Ranking.h"
+
 using namespace std;
 
 class Scene
@@ -16,6 +18,7 @@ private:
 	vector<GameObject*> obstacles;
 	Player player;
 	PowerUp* powerUp;
+	Ranking rank;
 	float puntos = 0;
 	bool victoria = false;
 	bool derrota = false;
