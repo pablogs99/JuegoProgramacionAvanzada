@@ -94,6 +94,10 @@ void Scene::Update(const float& time)
 					//Liberar memoria del powerUp
 					delete this->powerUp;
 				}
+				
+			}
+			if (powerUp->GetPosition().GetZ() > 12) {
+				powerUpColision = true;
 			}
 		
 		for (int idx = 0; idx < this->obstacles.size(); idx++)
