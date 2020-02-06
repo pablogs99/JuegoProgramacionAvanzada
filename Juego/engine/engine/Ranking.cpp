@@ -1,5 +1,6 @@
 #include "Ranking.h"
 
+//Agregamos el nombre y los puntos en un fichero
 void Ranking::agregar(int puntos) {
 	ofstream addFile("puntos.txt", ios::app);
 
@@ -12,6 +13,7 @@ void Ranking::agregar(int puntos) {
 	addFile.close();
 }
 
+//Leemos el fichero e introducimos los valores a un vector de strings(nombres) y a uno de doubles(
 void Ranking::addToVector() {
 
 	ifstream readFile("puntos.txt");
@@ -22,6 +24,7 @@ void Ranking::addToVector() {
 	}
 }
 
+//Obtenemos el elemento de menos puntos y lo eliminamos
 void Ranking::eliminarMinVec() {
 
 	for (int i = 0; i < puntosVector.size(); i++)
@@ -35,6 +38,8 @@ void Ranking::eliminarMinVec() {
 	nombres.erase(nombres.begin());
 
 }
+
+//Ordenamos los vectores de mayor a menor
 void Ranking::ordenarRanking() {
 	for (size_t i = 1; i < puntosVector.size(); ++i) {
 		for (size_t j = 0; j < puntosVector.size() - 1; ++j) {
@@ -46,6 +51,7 @@ void Ranking::ordenarRanking() {
 	}
 }
 
+//Volvemos a meter los elementos d
 void Ranking::agregarFichero() {
 	ofstream addFile("puntos.txt");
 	if (addFile.is_open()) {
