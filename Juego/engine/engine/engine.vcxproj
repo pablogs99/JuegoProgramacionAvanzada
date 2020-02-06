@@ -160,7 +160,11 @@
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="FlyingCamera.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="ObstaculoCubo.cpp" />
+    <ClCompile Include="ObstaculoEsfera.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PowerUp.cpp" />
+    <ClCompile Include="Ranking.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Sphere.cpp" />
@@ -176,7 +180,11 @@
     <ClInclude Include="Cylinder.h" />
     <ClInclude Include="FlyingCamera.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="ObstaculoCubo.h" />
+    <ClInclude Include="ObstaculoEsfera.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PowerUp.h" />
+    <ClInclude Include="Ranking.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Sphere.h" />

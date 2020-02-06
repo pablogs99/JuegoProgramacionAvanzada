@@ -1,7 +1,5 @@
 #include "Player.h"
 
-
-
 void Player::ProcessKeyPressed(unsigned char key, int px, int py)
 {
 	float velocidad = this->GetSpeed().GetX(); // velocidad = 0.45f
@@ -26,6 +24,5 @@ void Player::ProcessKeyPressed(unsigned char key, int px, int py)
 			colision2 += velocidad;
 		}
 			break;
-		
 	}
 }

@@ -43,6 +43,12 @@
     <Filter Include="Archivos de origen\Elements\Coche">
       <UniqueIdentifier>{522b03f7-ddd2-42ec-af4a-c223f48b067c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\Elements\ClasesNuevas">
+      <UniqueIdentifier>{fca7e6c4-392a-4380-b7d5-4a4893c3bb6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Elements\ClasesNuevas">
+      <UniqueIdentifier>{22abfd18-45a5-4ae5-9c79-4dec3b4c8e76}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -69,9 +75,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Archivos de origen\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Archivos de origen\Elements\Coche</Filter>
-    </ClCompile>
     <ClCompile Include="Cube.cpp">
       <Filter>Archivos de origen\Elements\Coche</Filter>
     </ClCompile>
@@ -89,6 +92,21 @@
     </ClCompile>
     <ClCompile Include="Torus.cpp">
       <Filter>Archivos de origen\Elements\Coche</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Archivos de origen\Elements\ClasesNuevas</Filter>
+    </ClCompile>
+    <ClCompile Include="Ranking.cpp">
+      <Filter>Archivos de origen\Elements\ClasesNuevas</Filter>
+    </ClCompile>
+    <ClCompile Include="ObstaculoCubo.cpp">
+      <Filter>Archivos de origen\Elements\ClasesNuevas</Filter>
+    </ClCompile>
+    <ClCompile Include="ObstaculoEsfera.cpp">
+      <Filter>Archivos de origen\Elements\ClasesNuevas</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerUp.cpp">
+      <Filter>Archivos de origen\Elements\ClasesNuevas</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,9 +140,6 @@
     <ClInclude Include="Cylinder.h">
       <Filter>Archivos de encabezado\Elements\Coche</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Archivos de encabezado\Elements\Coche</Filter>
-    </ClInclude>
     <ClInclude Include="Sphere.h">
       <Filter>Archivos de encabezado\Elements\Coche</Filter>
     </ClInclude>
@@ -133,6 +148,21 @@
     </ClInclude>
     <ClInclude Include="Torus.h">
       <Filter>Archivos de encabezado\Elements\Coche</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerUp.h">
+      <Filter>Archivos de encabezado\Elements\ClasesNuevas</Filter>
+    </ClInclude>
+    <ClInclude Include="Ranking.h">
+      <Filter>Archivos de encabezado\Elements\ClasesNuevas</Filter>
+    </ClInclude>
+    <ClInclude Include="ObstaculoCubo.h">
+      <Filter>Archivos de encabezado\Elements\ClasesNuevas</Filter>
+    </ClInclude>
+    <ClInclude Include="ObstaculoEsfera.h">
+      <Filter>Archivos de encabezado\Elements\ClasesNuevas</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Archivos de encabezado\Elements\ClasesNuevas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

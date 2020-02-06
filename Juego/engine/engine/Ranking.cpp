@@ -51,7 +51,8 @@ void Ranking::ordenarRanking() {
 	}
 }
 
-//Volvemos a meter los elementos d
+//Volvemos a meter los elementos de los vectores en el fichero
+//No le metemos ios::app para que pueda sobreescribir lo que habia ya
 void Ranking::agregarFichero() {
 	ofstream addFile("puntos.txt");
 	if (addFile.is_open()) {
@@ -62,6 +63,7 @@ void Ranking::agregarFichero() {
 	addFile.close();
 }
 
+//Leer el fichero
 void Ranking::visualizar() {
 
 	ifstream readFile("puntos.txt");
@@ -75,11 +77,12 @@ void Ranking::visualizar() {
 	readFile.close();
 }
 
+//Metodo que usa los otros metodos anteriores ordenados para crear el ranking
 void Ranking::crearRanking(int puntos) {
 
 	agregar(puntos);
 	addToVector();
-	if (nombres.size() > 5) {
+	if (nombres.size() > 5) { //Si los jugadores son mayores que 5, eliminamos el jugador con menos puntos
 		eliminarMinVec();
 	}
 	ordenarRanking();
