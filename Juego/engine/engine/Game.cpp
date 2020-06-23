@@ -32,7 +32,7 @@ void Game::Create()
 		for (int index = 1; index < numCubos; index++) {
 			pointerToCubes[index] = ObstaculoCubo(
 				Vector3D((rand() % 13), (0.5), -25),  //posición 
-				Color((0.5f), (0.5f), (0.9f)), //color
+				Color((1), (1), (1)), //color
 				Vector3D((0.07 + index * 0.001), (0), (0.6 * index)),  //velocidad 
 				0.1 + 2 * 0.1 //orientacion
 			);
@@ -47,7 +47,7 @@ void Game::Create()
 		for (int index = 1; index < numEsferas; index++) {
 			pointerToSpheres[index] = ObstaculoEsfera(
 				Vector3D((rand() % 13), (0.8), -25),  //posición 
-				Color((0.6f), (0.4f), (0.3f)), 
+				Color((0.5), (0.5), (0.5)), 
 				Vector3D((0.07 + index * 0.001), (0), (0.75 * index)),  //velocidad 
 				0.1 + 2 * 0.1 //orientacion
 			);
@@ -58,7 +58,7 @@ void Game::Create()
 
 	//Anillo
 	PowerUp* powerUp = new PowerUp();
-	powerUp->SetPosition(Vector3D(6.0f, -4.2f, -25.0f)); 
+	powerUp->SetPosition(Vector3D(6.0f, -4.2f, -25.0f)); //y = 1.2
 	powerUp->SetOrientationSpeed(Vector3D(0.0f, 20.0f, 0.0f));
 	mainScene->setPower(powerUp);
 	
@@ -71,6 +71,7 @@ void Game::Create()
 	floor->SetWidth(1000.0f);
 	floor->SetIsAffectedByGravity(false);
 	mainScene->AddGameObject(floor);
+
 
 	Cuboid* pianoIZq = new Cuboid();
 	pianoIZq->SetPosition(Vector3D(-3.0f, -1.0f, 5.0f));
