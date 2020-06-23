@@ -19,22 +19,19 @@ void Scene::ClearScene()
 void Scene::Render()
 {
 	this->camera.Render();
+	//this->camera2.Render();
 	this->player.Render();
 	if (!powerUpColision) {
 		this->powerUp->Render();
 	}
-	
-
 	for (int idx = 0; idx < this->gameObjects.size(); idx++)
 	{
 		this->gameObjects[idx]->Render();
-		
 	}
 	for (int idx = 0; idx < this->obstacles.size(); idx++)
 	{
 		this->obstacles[idx]->Render();
 	}
-
 }
 
 void Scene::Update(const float& time)
@@ -93,8 +90,7 @@ void Scene::Update(const float& time)
 					cout << "POWER UP DE VELOCIDAD!!!" << endl;
 					//Liberar memoria del powerUp
 					delete this->powerUp;
-				}
-				
+				}			
 			}
 			if (powerUp->GetPosition().GetZ() > 12) {
 				powerUpColision = true;
@@ -102,6 +98,7 @@ void Scene::Update(const float& time)
 		
 		for (int idx = 0; idx < this->obstacles.size(); idx++)
 		{
+			//Para que los obstaculos no se salgan del mapa
 			this->obstacles[idx]->Update(time, this->GetGravity());
 
 			if (this->obstacles[idx]->GetPosition().GetX() > this->GetSize().GetX()
@@ -139,25 +136,23 @@ void Scene::Update(const float& time)
 			rank.crearRanking(puntos);
 			cout << "PULSA M PARA VOLVER A JUGAR" << endl;
 		}
-		
 	}
 }
 
 void Scene::ProcessMouseMovement(const int& x, const int& y)
 {
-	this->camera.ProcessMouseMovement(x, y);
+	//this->camera.ProcessMouseMovement(x, y);
 }
 
 void Scene::ProcessMouseClick(const int& button, const int& state, const int& x, const int& y)
 {
-	this->camera.ProcessMouseClick(button, state, x, y);
+	//this->camera.ProcessMouseClick(button, state, x, y);
 }
 
 void Scene::ProcessKeyPressed(unsigned char key, int px, int py)
 {
-	this->player.ProcessKeyPressed(key, px, py);
+	this->player.ProcessKeyPressed(key, px, py); 
 	this->camera.ProcessKeyPressed(key, px, py);
-
 }
 
 

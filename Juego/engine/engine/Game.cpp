@@ -1,7 +1,6 @@
 #include "Game.h"
 #include "Cube.h"
 #include "Sphere.h"
-#include "Cylinder.h"
 #include "Torus.h"
 #include "Cuboid.h"
 #include "Player.h"
@@ -12,7 +11,7 @@
 void Game::Create() 
 {
 	Scene* mainScene = new(nothrow) Scene();
-	FlyingCamera mainCamera = mainScene->GetCamera();
+	CamaraFija mainCamera = mainScene->GetCamera();
 	mainCamera.SetPosition(Vector3D(5.0f, 10.0f, 20.0f)); //posicion camara fija
 
 	mainCamera.SetOrientation(Vector3D(20.0f, 0.0f, 0.0f));
@@ -62,7 +61,6 @@ void Game::Create()
 	powerUp->SetOrientationSpeed(Vector3D(0.0f, 20.0f, 0.0f));
 	mainScene->setPower(powerUp);
 	
-
 	Cuboid* floor = new Cuboid();
 	floor->SetPosition(Vector3D(5.0f, -0.5f, 5.0f));
 	floor->SetColor(Color(0.4f, 0.4f, 0.4f));
@@ -71,7 +69,6 @@ void Game::Create()
 	floor->SetWidth(1000.0f);
 	floor->SetIsAffectedByGravity(false);
 	mainScene->AddGameObject(floor);
-
 
 	Cuboid* pianoIZq = new Cuboid();
 	pianoIZq->SetPosition(Vector3D(-3.0f, -1.0f, 5.0f));
@@ -102,7 +99,14 @@ void Game::Render()
 
 void Game::Update()
 {
-	this->activeScene->Update(this->deltaTime);
+	//this->activeScene->Update(this->deltaTime);
+	milliseconds currentTime = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+
+	if ((currentTime.count() - this->initialMilliseconds.count()) - this->lastUpdatedTime > UPDATE_PERIOD)
+	{
+		this->activeScene->Update(TIME_INCREMENT);
+		this->lastUpdatedTime = currentTime.count() - this->initialMilliseconds.count();
+	}
 }
 
 void Game::ProcessMouseMovement(const int& xPosition, const int& yPosition) 

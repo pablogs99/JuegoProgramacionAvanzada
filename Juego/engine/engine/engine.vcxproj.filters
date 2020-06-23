@@ -69,9 +69,6 @@
     <ClCompile Include="Vector3D.cpp">
       <Filter>Archivos de origen\Base</Filter>
     </ClCompile>
-    <ClCompile Include="FlyingCamera.cpp">
-      <Filter>Archivos de origen\Cameras</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Archivos de origen\Core</Filter>
     </ClCompile>
@@ -81,13 +78,7 @@
     <ClCompile Include="Cuboid.cpp">
       <Filter>Archivos de origen\Elements\Coche</Filter>
     </ClCompile>
-    <ClCompile Include="Cylinder.cpp">
-      <Filter>Archivos de origen\Elements\Coche</Filter>
-    </ClCompile>
     <ClCompile Include="Sphere.cpp">
-      <Filter>Archivos de origen\Elements\Coche</Filter>
-    </ClCompile>
-    <ClCompile Include="Teapot.cpp">
       <Filter>Archivos de origen\Elements\Coche</Filter>
     </ClCompile>
     <ClCompile Include="Torus.cpp">
@@ -108,6 +99,9 @@
     <ClCompile Include="PowerUp.cpp">
       <Filter>Archivos de origen\Elements\ClasesNuevas</Filter>
     </ClCompile>
+    <ClCompile Include="CamaraFija.cpp">
+      <Filter>Archivos de origen\Cameras</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -125,9 +119,6 @@
     <ClInclude Include="GameObject.h">
       <Filter>Archivos de encabezado\Core</Filter>
     </ClInclude>
-    <ClInclude Include="FlyingCamera.h">
-      <Filter>Archivos de encabezado\Cameras</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Archivos de encabezado\Core</Filter>
     </ClInclude>
@@ -137,13 +128,7 @@
     <ClInclude Include="Cuboid.h">
       <Filter>Archivos de encabezado\Elements\Coche</Filter>
     </ClInclude>
-    <ClInclude Include="Cylinder.h">
-      <Filter>Archivos de encabezado\Elements\Coche</Filter>
-    </ClInclude>
     <ClInclude Include="Sphere.h">
-      <Filter>Archivos de encabezado\Elements\Coche</Filter>
-    </ClInclude>
-    <ClInclude Include="Teapot.h">
       <Filter>Archivos de encabezado\Elements\Coche</Filter>
     </ClInclude>
     <ClInclude Include="Torus.h">
@@ -163,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Archivos de encabezado\Elements\ClasesNuevas</Filter>
+    </ClInclude>
+    <ClInclude Include="CamaraFija.h">
+      <Filter>Archivos de encabezado\Cameras</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

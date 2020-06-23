@@ -3,17 +3,17 @@
 #include "Vector3D.h"
 #include "GameObject.h"
 #include "Camera.h"
-#include "FlyingCamera.h"
 #include "Player.h"
 #include "PowerUp.h"
 #include "Ranking.h"
+#include "CamaraFija.h"
 
 using namespace std;
 
 class Scene
 {
 private:
-	FlyingCamera camera;
+	CamaraFija camera;
 	vector<GameObject*> gameObjects;
 	vector<GameObject*> obstacles;
 	Player player;
@@ -25,11 +25,11 @@ private:
 	bool powerUpColision = false;
 	Vector3D size;
 	Vector3D gravity;
-public:
 
+public:
 	Scene(Vector3D sizeToSet = Vector3D(10.0f, 10.0f, 10.0f), Vector3D cameraPosition = Vector3D(5.0f, 5.0f, 22.0f), 
 		Vector3D cameraOrientation = Vector3D(), Vector3D gravity = Vector3D(0.0f, -0.01f, 0.0f)) : 
-		size(sizeToSet), gravity(gravity), camera(FlyingCamera(cameraPosition, cameraOrientation)) {}
+		size(sizeToSet), gravity(gravity), camera(CamaraFija(cameraPosition, cameraOrientation)) {}
 
 	inline int GetPuntos() { return this->puntos; }
 	inline void SetPuntos(int puntos) { this->puntos = puntos; }
@@ -37,8 +37,10 @@ public:
 	inline Vector3D GetGravity() const { return this->gravity; }
 	inline void SetGravity(const Vector3D& gravity) { this->gravity = gravity; }
 	inline void SetSize(const Vector3D& sizeToSet) { this->size = sizeToSet; }
-	inline FlyingCamera GetCamera() const { return this->camera; }
-	inline void SetCamera(FlyingCamera cameraToSet) { this->camera = cameraToSet; }
+
+	inline CamaraFija GetCamera() const { return this->camera; }
+	inline void SetCamera(CamaraFija cameraToSet) { this->camera = cameraToSet; }
+
 	Player getPlayer() { return this->player; }
 	void setPlayer(const Player& player){ this->player = player;}
 
@@ -55,6 +57,4 @@ public:
 	void ProcessMouseMovement(const int& x, const int& y);
 	void ProcessMouseClick(const int& button, const int& state, const int& x, const int& y);
 	void ProcessKeyPressed(unsigned char key, int px, int py);
-
-
 };
