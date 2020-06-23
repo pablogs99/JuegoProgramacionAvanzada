@@ -20,9 +20,9 @@ private:
 	PowerUp* powerUp;
 	Ranking rank;
 	float puntos = 0;
-	bool victoria = false;
 	bool derrota = false;
 	bool powerUpColision = false;
+	bool powerUpSpawned = false;
 	Vector3D size;
 	Vector3D gravity;
 
@@ -53,6 +53,12 @@ public:
 	void ClearScene();
 	void Render();
 	void Update(const float& time);
+	
+	/////
+	void GameObjectLimits(const float& time);
+	void CheckCollision();
+	void CheckPowerUpCollision();
+	void SpawnPowerUp();
 
 	void ProcessMouseMovement(const int& x, const int& y);
 	void ProcessMouseClick(const int& button, const int& state, const int& x, const int& y);

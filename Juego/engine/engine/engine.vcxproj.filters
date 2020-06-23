@@ -102,6 +102,9 @@
     <ClCompile Include="CamaraFija.cpp">
       <Filter>Archivos de origen\Cameras</Filter>
     </ClCompile>
+    <ClCompile Include="RaceScene.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -151,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="CamaraFija.h">
       <Filter>Archivos de encabezado\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="RaceScene.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

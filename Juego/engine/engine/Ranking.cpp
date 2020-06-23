@@ -13,7 +13,7 @@ void Ranking::agregar(int puntos) {
 	addFile.close();
 }
 
-//Leemos el fichero e introducimos los valores a un vector de strings(nombres) y a uno de doubles(
+//Leemos el fichero e introducimos los valores a un vector de strings(nombres) y a uno de doubles
 void Ranking::addToVector() {
 
 	ifstream readFile("puntos.txt");
@@ -36,7 +36,6 @@ void Ranking::eliminarMinVec() {
 	}
 	puntosVector.erase(puntosVector.begin());
 	nombres.erase(nombres.begin());
-
 }
 
 //Ordenamos los vectores de mayor a menor
