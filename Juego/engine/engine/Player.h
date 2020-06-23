@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "GameObject.h"
 #include "Cuboid.h"
+#include "Model.h"
 #include <iostream>
 class Player : public Cuboid {
 private:								
@@ -14,7 +15,7 @@ public:
 		this->SetLength(2.0f);
 		this->SetWidth(2.0f);
 		this->SetColor(Color(1.0f, 30.0f, 1.0f));
-		this->SetIsAffectedByGravity(false);
+		this->SetIsAffectedByGravity(false);	
 	}
 
 	inline float getColision1() { return colision1; }

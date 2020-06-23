@@ -6,7 +6,7 @@ using namespace std::chrono;
 class Game
 {
 private:
-	const double TIME_INCREMENT = 0.4; //ms tiempo en el juego
+	const double TIME_INCREMENT = 0.15; //ms tiempo en el juego
 	const long UPDATE_PERIOD = 10; //ms tiempo en el mundo real
 
 	milliseconds initialMilliseconds;

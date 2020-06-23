@@ -19,7 +19,8 @@ void Scene::ClearScene()
 void Scene::Render()
 {
 	this->camera.Render();
-	this->player.Render();
+	//this->player.Render();
+	this->player2.Render();
 	if (!powerUpColision) {
 		this->powerUp->Render();
 	}
@@ -37,8 +38,8 @@ void Scene::Update(const float& time)
 {
 	if (!derrota) {
 		this->puntos += time;
-		cout << puntos << endl;
-			
+		//cout << puntos << endl;
+
 		/////////////////
 		if (!powerUpSpawned) {
 			SpawnPowerUp();
@@ -75,18 +76,18 @@ void Scene::SpawnPowerUp() {
 void Scene::CheckCollision() {
 	//Comprobar colisiones
 	for (int idx = 0; idx < this->obstacles.size(); idx++)
-	{
+	{					
 		if (obstacles[idx]->GetPosition().GetZ() < 11.7) { //Para que no haya colision despues de que el obstaculo sobrepase al jugador
 			// Colision eje X
-			bool collisionX = obstacles[idx]->GetPosition().GetX() > this->player.getColision1() && obstacles[idx]->GetPosition().GetX() < this->player.getColision2();
+			bool collisionX = obstacles[idx]->GetPosition().GetX() > this->player2.getColision1() && obstacles[idx]->GetPosition().GetX() < this->player2.getColision2();
 
 			// Colision eje Z
-			bool collisionZ = obstacles[idx]->GetPosition().GetZ() >= this->player.GetPosition().GetZ();
+			bool collisionZ = obstacles[idx]->GetPosition().GetZ() >= this->player2.GetPosition().GetZ();
 
 			// Colision solo si ha habido colision en los dos ejes
 			// Si hay colision se para el juego y perdemos
 			if (collisionX && collisionZ) {
-				this->player.SetSpeed(Vector3D(0, 0, 0));
+				this->player2.SetSpeed(Vector3D(0, 0, 0));
 				for (int idx = 0; idx < this->obstacles.size(); idx++)
 				{
 					this->obstacles[idx]->SetSpeed(Vector3D(0, 0, 0));
@@ -101,12 +102,12 @@ void Scene::CheckPowerUpCollision() {
 
 	//Colision con el PowerUp
 	if (powerUp->GetPosition().GetZ() < 11.7) {
-		bool collisionX = powerUp->GetPosition().GetX() > this->player.getColision1() && powerUp->GetPosition().GetX() < this->player.getColision2();
+		bool collisionX = powerUp->GetPosition().GetX() > this->player2.getColision1() && powerUp->GetPosition().GetX() < this->player2.getColision2();
 
-		bool collisionZ = powerUp->GetPosition().GetZ() >= this->player.GetPosition().GetZ();
+		bool collisionZ = powerUp->GetPosition().GetZ() >= this->player2.GetPosition().GetZ();
 
 		if (collisionX && collisionZ) {
-			this->player.SetSpeed(Vector3D(0.9, 0, 0));
+			this->player2.SetSpeed(Vector3D(0.9, 0, 0));
 			powerUpColision = true;
 			//Liberar memoria del powerUp
 			delete this->powerUp;
@@ -155,7 +156,7 @@ void Scene::ProcessMouseClick(const int& button, const int& state, const int& x,
 
 void Scene::ProcessKeyPressed(unsigned char key, int px, int py)
 {
-	this->player.ProcessKeyPressed(key, px, py);
+	this->player2.ProcessKeyPressed(key, px, py);
 	this->camera.ProcessKeyPressed(key, px, py);
 }
 

@@ -7,6 +7,7 @@
 #include "PowerUp.h"
 #include "Ranking.h"
 #include "CamaraFija.h"
+#include "Player2.h"
 
 using namespace std;
 
@@ -26,6 +27,7 @@ private:
 	Vector3D size;
 	Vector3D gravity;
 
+	Player2 player2;
 public:
 	Scene(Vector3D sizeToSet = Vector3D(10.0f, 10.0f, 10.0f), Vector3D cameraPosition = Vector3D(5.0f, 5.0f, 22.0f), 
 		Vector3D cameraOrientation = Vector3D(), Vector3D gravity = Vector3D(0.0f, -0.01f, 0.0f)) : 
@@ -59,6 +61,9 @@ public:
 	void CheckCollision();
 	void CheckPowerUpCollision();
 	void SpawnPowerUp();
+
+	Player2 getPlayer2() { return this->player2; }
+	void setPlayer2(const Player2& player) { this->player2 = player; }
 
 	void ProcessMouseMovement(const int& x, const int& y);
 	void ProcessMouseClick(const int& button, const int& state, const int& x, const int& y);

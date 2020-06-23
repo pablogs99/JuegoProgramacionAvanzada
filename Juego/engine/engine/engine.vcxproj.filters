@@ -49,6 +49,12 @@
     <Filter Include="Archivos de encabezado\Elements\ClasesNuevas">
       <UniqueIdentifier>{22abfd18-45a5-4ae5-9c79-4dec3b4c8e76}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Elements\Models">
+      <UniqueIdentifier>{ed9a3886-d7aa-48d0-8393-510f9999fdf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Elements\Models">
+      <UniqueIdentifier>{a96394c6-6559-4ae5-9a99-7a62c01e19d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -103,7 +109,16 @@
       <Filter>Archivos de origen\Cameras</Filter>
     </ClCompile>
     <ClCompile Include="RaceScene.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangle.cpp">
+      <Filter>Archivos de origen\Elements\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Archivos de origen\Elements\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Player2.cpp">
+      <Filter>Archivos de origen\Elements\ClasesNuevas</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -156,7 +171,16 @@
       <Filter>Archivos de encabezado\Cameras</Filter>
     </ClInclude>
     <ClInclude Include="RaceScene.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Archivos de encabezado\Elements\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Archivos de encabezado\Elements\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Player2.h">
+      <Filter>Archivos de encabezado\Elements\ClasesNuevas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

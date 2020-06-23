@@ -7,6 +7,7 @@
 #include "ObstaculoCubo.h"
 #include "ObstaculoEsfera.h"
 #include "PowerUp.h"
+#include "Model.h"
 
 void Game::Create() 
 {
@@ -21,8 +22,15 @@ void Game::Create()
 	//Jugador
 	Player* jugador = new Player();
 	jugador->SetPosition(Vector3D(5.0f, 1.0f, 10.0f));
-	jugador->SetSpeed(Vector3D(0.45f, 0, 0));
+	
 	mainScene->setPlayer(*jugador);
+
+	//Jugador
+	Player2* jugador2 = new Player2();
+	jugador2->SetPosition(Vector3D(5.0f, 1.0f, 10.0f));
+	jugador2->SetSpeed(Vector3D(0.45f, 0, 0));
+	mainScene->setPlayer2(*jugador2);
+
 
 	//obstaculos Cubos
 	int numCubos = 3; // Son 4 en realidad porque index empieza en 1 para que la velocidad no sea 0
@@ -87,6 +95,14 @@ void Game::Create()
 	pianoDer->SetWidth(1000.0f);
 	pianoDer->SetIsAffectedByGravity(false);
 	mainScene->AddGameObject(pianoDer);
+
+   /* Model* star = new Model();
+	star->LoadModel("Pug.obj");
+	star->SetPosition(Vector3D(6, 8, 4));
+	star->SetOrientationSpeed(Vector3D(0, 1, 0));
+	star->SetColor(Color(0.8, 0.6, 0.1));
+	star->SetIsAffectedByGravity(false);
+	mainScene->AddGameObject(star);*/
 
 	this->scenes.push_back(mainScene);
 	this->activeScene = mainScene;
