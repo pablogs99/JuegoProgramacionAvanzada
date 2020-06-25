@@ -87,9 +87,6 @@
     <ClCompile Include="Sphere.cpp">
       <Filter>Archivos de origen\Elements\Coche</Filter>
     </ClCompile>
-    <ClCompile Include="Torus.cpp">
-      <Filter>Archivos de origen\Elements\Coche</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Archivos de origen\Elements\ClasesNuevas</Filter>
     </ClCompile>
@@ -147,9 +144,6 @@
       <Filter>Archivos de encabezado\Elements\Coche</Filter>
     </ClInclude>
     <ClInclude Include="Sphere.h">
-      <Filter>Archivos de encabezado\Elements\Coche</Filter>
-    </ClInclude>
-    <ClInclude Include="Torus.h">
       <Filter>Archivos de encabezado\Elements\Coche</Filter>
     </ClInclude>
     <ClInclude Include="PowerUp.h">

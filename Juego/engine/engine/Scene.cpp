@@ -1,4 +1,4 @@
-﻿#include "Scene.h"
+﻿/* #include "Scene.h"
 
 void Scene::AddGameObject(GameObject* object)
 {
@@ -38,7 +38,7 @@ void Scene::Update(const float& time)
 {
 	if (!derrota) {
 		this->puntos += time;
-		//cout << puntos << endl;
+		cout << puntos << endl;
 
 		/////////////////
 		if (!powerUpSpawned) {
@@ -107,7 +107,7 @@ void Scene::CheckPowerUpCollision() {
 		bool collisionZ = powerUp->GetPosition().GetZ() >= this->player2.GetPosition().GetZ();
 
 		if (collisionX && collisionZ) {
-			this->player2.SetSpeed(Vector3D(0.9, 0, 0));
+			this->player2.cambiarVelocidad(this->player2.GetSpeed().GetX() * 2);
 			powerUpColision = true;
 			//Liberar memoria del powerUp
 			delete this->powerUp;
@@ -115,6 +115,7 @@ void Scene::CheckPowerUpCollision() {
 	}
 	if (powerUp->GetPosition().GetZ() > 12) {
 		powerUpColision = true;
+		delete this->powerUp;
 	}
 }
 void Scene::GameObjectLimits(const float& time) {
@@ -159,5 +160,34 @@ void Scene::ProcessKeyPressed(unsigned char key, int px, int py)
 	this->player2.ProcessKeyPressed(key, px, py);
 	this->camera.ProcessKeyPressed(key, px, py);
 }
+
+*/
+
+#include "Scene.h"
+
+void Scene::ClearScene()
+{
+}
+
+void Scene::Render()
+{
+}
+
+void Scene::Update(const float& time)
+{
+}
+
+void Scene::ProcessMouseMovement(const int& x, const int& y)
+{
+}
+
+void Scene::ProcessMouseClick(const int& button, const int& state, const int& x, const int& y)
+{
+}
+
+void Scene::ProcessKeyPressed(unsigned char key, int px, int py)
+{
+}
+
 
 

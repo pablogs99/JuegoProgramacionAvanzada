@@ -1,8 +1,11 @@
 #include "Player2.h"
 
+void Player2::cambiarVelocidad(float v) {
+	this->velocidad = v;
+}
+
 void Player2::ProcessKeyPressed(unsigned char key, int px, int py)
 {
-	//float velocidad = this->GetSpeed().GetX(); // velocidad = 0.45f
 	switch (key) {
 	case 'a':
 	case 'A':
