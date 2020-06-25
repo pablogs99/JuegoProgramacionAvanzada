@@ -2,7 +2,6 @@
 #include "Cube.h"
 #include "Sphere.h"
 #include "Cuboid.h"
-#include "Player.h"
 #include "ObstaculoCubo.h"
 #include "ObstaculoEsfera.h"
 #include "PowerUp.h"
@@ -12,13 +11,6 @@
 void Game::Create() 
 {
 	RaceScene* mainScene = new(nothrow) RaceScene();
-	//CamaraFija mainCamera = mainScene->GetCamera();
-	//mainCamera.SetPosition(Vector3D(5.0f, 10.0f, 20.0f)); //posicion camara fija
-
-	//mainCamera.SetOrientation(Vector3D(20.0f, 0.0f, 0.0f));
-	//mainScene->SetCamera(mainCamera);
-	//mainCamera.SetSpeed(Vector3D(0.0f, .0f, -0.7f)); 
-
 	this->scenes.push_back(mainScene);
 	this->activeScene = mainScene;
 }
@@ -39,11 +31,6 @@ void Game::Update()
 	}
 }
 
-void Game::ProcessMouseMovement(const int& xPosition, const int& yPosition) 
-{
-	//this->activeScene->ProcessMouseMovement(xPosition, yPosition);
-}
-
 void Game::ProcessKeyPressed(const unsigned char& key, const int& xPosition, const int& yPosition)
 {
 	this->activeScene->ProcessKeyPressed(key, xPosition, yPosition);
@@ -59,5 +46,9 @@ void Game::ProcessKeyPressed(const unsigned char& key, const int& xPosition, con
 
 void Game::ProcessMouseClick(const int& button, const int& state, const int& xPosition, const int& yPosition) 
 {
-	//this->activeScene->ProcessMouseClick(button, state, xPosition, yPosition);
 }
+
+void Game::ProcessMouseMovement(const int& xPosition, const int& yPosition)
+{
+}
+

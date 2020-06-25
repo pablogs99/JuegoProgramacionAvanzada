@@ -3,7 +3,6 @@
 #include "Vector3D.h"
 #include "GameObject.h"
 #include "Camera.h"
-#include "Player.h"
 #include "PowerUp.h"
 #include "Ranking.h"
 #include "CamaraFija.h"
@@ -11,6 +10,7 @@
 #include "Scene.h"
 #include "ObstaculoCubo.h"
 #include "ObstaculoEsfera.h"
+#include "Cuboid.h"
 
 using namespace std;
 
@@ -20,22 +20,16 @@ private:
 	CamaraFija camera;
 	vector<GameObject*> gameObjects;
 	vector<GameObject*> obstacles;
-	Player player;
+	Player2 player2;
 	PowerUp* powerUp;
 	Ranking rank;
+
 	float puntos = 0;
 	bool derrota = false;
 	bool powerUpColision = false;
 	bool powerUpSpawned = false;
 
-	Player2 player2;
 public:
-
-	//Scene(Vector3D sizeToSet = Vector3D(10.0f, 10.0f, 10.0f), Vector3D cameraPosition = Vector3D(5.0f, 10.0f, 20.0f),
-//	Vector3D cameraOrientation = Vector3D(20.0f, 0.0f, 0.0f), Vector3D gravity = Vector3D(0.0f, -0.01f, 0.0f)) :
-//	size(sizeToSet), gravity(gravity), camera(CamaraFija(cameraPosition, cameraOrientation)) {}
-
-
 	RaceScene(Vector3D cameraPosition = Vector3D(5.0f, 10.0f, 20.0f), Vector3D cameraOrientation = Vector3D(20.0f, 0.0f, 0.0f)):
 		Scene(),camera(CamaraFija(cameraPosition, cameraOrientation)) {
 		 CreateCarretera();
@@ -49,9 +43,6 @@ public:
 
 	inline CamaraFija GetCamera() const { return this->camera; }
 	inline void SetCamera(CamaraFija cameraToSet) { this->camera = cameraToSet; }
-
-	Player getPlayer() { return this->player; }
-	void setPlayer(const Player& player){ this->player = player;}
 
 	PowerUp* getPower() { return this->powerUp; }
 	void setPower(PowerUp* power) { this->powerUp = power; }

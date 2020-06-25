@@ -162,7 +162,6 @@
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="ObstaculoCubo.cpp" />
     <ClCompile Include="ObstaculoEsfera.cpp" />
-    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Player2.cpp" />
     <ClCompile Include="PowerUp.cpp" />
     <ClCompile Include="RaceScene.cpp" />
@@ -183,7 +182,6 @@
     <ClInclude Include="Model.h" />
     <ClInclude Include="ObstaculoCubo.h" />
     <ClInclude Include="ObstaculoEsfera.h" />
-    <ClInclude Include="Player.h" />
     <ClInclude Include="Player2.h" />
     <ClInclude Include="PowerUp.h" />
     <ClInclude Include="RaceScene.h" />
