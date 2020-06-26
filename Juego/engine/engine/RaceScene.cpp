@@ -48,10 +48,9 @@ void RaceScene::CreateCarretera() {
 
 void RaceScene::CreateObstacle() {
 	//obstaculos Cubos
-	int numCubos = 3; // Son 4 en realidad porque index empieza en 1 para que la velocidad no sea 0
-	ObstaculoCubo* pointerToCubes = new(nothrow) ObstaculoCubo[numCubos];
+	ObstaculoCubo* pointerToCubes = new(nothrow) ObstaculoCubo[numObstaculos];
 	if (pointerToCubes != nullptr) {
-		for (int index = 1; index < numCubos; index++) {
+		for (int index = 1; index < numObstaculos; index++) {
 			pointerToCubes[index] = ObstaculoCubo(
 				Vector3D((rand() % 13), (0.5), -25),  //posición 
 				Color((1), (1), (1)), //color
@@ -63,10 +62,9 @@ void RaceScene::CreateObstacle() {
 		}
 	}
 	//obstaculos Esferas
-	int numEsferas = 3;
-	ObstaculoEsfera* pointerToSpheres = new(nothrow) ObstaculoEsfera[numEsferas];
+	ObstaculoEsfera* pointerToSpheres = new(nothrow) ObstaculoEsfera[numObstaculos];
 	if (pointerToSpheres != nullptr) {
-		for (int index = 1; index < numEsferas; index++) {
+		for (int index = 1; index < numObstaculos; index++) {
 			pointerToSpheres[index] = ObstaculoEsfera(
 				Vector3D((rand() % 13), (0.8), -25),  //posición 
 				Color((0.5), (0.5), (0.5)),
@@ -117,22 +115,27 @@ void RaceScene::Update(const float& time)
 		this->puntos += time;
 		cout << puntos << endl;
 
-		/////////////////
+		//Crear el power up si no se ha creado todavia
 		if (!powerUpSpawned) {
 			SpawnPowerUp();
 		}
-		//////////////////
+
+		//Comprobar colisiones con los obstaculos
 		CheckCollision();
-		///////////////////
+
+		//Comprobar colision con el power up
 		CheckPowerUpCollision();
-		///////////////////////
-		GameObjectLimits(time);
-		///////////////////////
+
+		//Asegurarse de que los obstaculos no se salgan de la carretera
+		//Cuando llegan los obstaculos al final, vuelven a la posicion de inicio
+		ObstaculosLimits(time);
 
 		//Mientras que no haya colisionado el powerUp, seguimos actualizandolo
 		if (!powerUpColision) {
 			this->powerUp->Update(time, this->GetGravity());
 		}
+
+		//Si perdemos, mostrar ranking y reiniciar
 		if (derrota) {
 			cout << "HAS PERDIDO!" << endl;
 			rank.crearRanking(puntos);
@@ -195,7 +198,7 @@ void RaceScene::CheckPowerUpCollision() {
 		delete this->powerUp;
 	}
 }
-void RaceScene::GameObjectLimits(const float& time) {
+void RaceScene::ObstaculosLimits(const float& time) {
 
 	for (int idx = 0; idx < this->obstacles.size(); idx++)
 	{

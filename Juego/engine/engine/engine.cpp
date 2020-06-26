@@ -6,7 +6,7 @@
 using namespace std;
 
 
-//---------Juego hecho por PABLO GARCIA Y WEI ZHENG----------------
+//---------Juego hecho por WEI ZHENG Y PABLO GARCIA ----------------
 
 ///////////////////////////////////////// VARIABLES GLOBALES ////////////////////////////////////////////
 

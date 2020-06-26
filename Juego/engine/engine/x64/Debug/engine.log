@@ -1,35 +1,37 @@
 ﻿  Game.cpp
 D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Player2.h(9,23): warning C4305:  'inicializando': truncamiento de 'double' a 'float'
 D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Player2.h(10,23): warning C4305:  'inicializando': truncamiento de 'double' a 'float'
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.h(41,38): warning C4244:  'return': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.h(42,53): warning C4244:  '=': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Game.cpp(29,29): warning C4244:  'argumento': conversión de 'const double' a 'const float'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.h(44,38): warning C4244:  'return': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.h(45,53): warning C4244:  '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Game.cpp(30,29): warning C4244:  'argumento': conversión de 'const double' a 'const float'; posible pérdida de datos
+  Player2.cpp
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Game.cpp(31,47): warning C4244:  '=': conversión de '_Rep' a 'long'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Game.cpp(31,47): warning C4244:         with
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Game.cpp(31,47): warning C4244:         [
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Game.cpp(31,47): warning C4244:             _Rep=__int64
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Game.cpp(31,47): warning C4244:         ]
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Player2.h(9,23): warning C4305:  'inicializando': truncamiento de 'double' a 'float'
   RaceScene.cpp
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Game.cpp(30,47): warning C4244:  '=': conversión de '_Rep' a 'long'; posible pérdida de datos
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Game.cpp(30,47): warning C4244:         with
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Game.cpp(30,47): warning C4244:         [
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Game.cpp(30,47): warning C4244:             _Rep=__int64
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Game.cpp(30,47): warning C4244:         ]
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Player2.h(10,23): warning C4305:  'inicializando': truncamiento de 'double' a 'float'
 D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Player2.h(9,23): warning C4305:  'inicializando': truncamiento de 'double' a 'float'
 D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Player2.h(10,23): warning C4305:  'inicializando': truncamiento de 'double' a 'float'
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.h(41,38): warning C4244:  'return': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.h(42,53): warning C4244:  '=': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(56,22): warning C4244:  'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(58,48): warning C4244:  'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(58,20): warning C4244:  'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(60,4): warning C4305:  'argumento': truncamiento de 'double' a 'float'
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(71,39): warning C4305:  'argumento': truncamiento de 'double' a 'float'
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(71,22): warning C4244:  'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(73,49): warning C4244:  'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(73,20): warning C4244:  'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(75,4): warning C4305:  'argumento': truncamiento de 'double' a 'float'
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(138,22): warning C4244:  'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  Scene.cpp
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.h(44,38): warning C4244:  'return': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.h(45,53): warning C4244:  '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(55,22): warning C4244:  'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(57,48): warning C4244:  'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(57,20): warning C4244:  'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(59,4): warning C4305:  'argumento': truncamiento de 'double' a 'float'
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(69,39): warning C4305:  'argumento': truncamiento de 'double' a 'float'
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(69,22): warning C4244:  'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(71,49): warning C4244:  'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(71,20): warning C4244:  'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(73,4): warning C4305:  'argumento': truncamiento de 'double' a 'float'
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(137,22): warning C4244:  'argumento': conversión de 'float' a 'int'; posible pérdida de datos
   engine.cpp
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(222,55): warning C4244:  'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.cpp(221,55): warning C4244:  'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Player2.h(9,23): warning C4305:  'inicializando': truncamiento de 'double' a 'float'
 D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\Player2.h(10,23): warning C4305:  'inicializando': truncamiento de 'double' a 'float'
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.h(41,38): warning C4244:  'return': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.h(44,38): warning C4244:  'return': conversión de 'float' a 'int'; posible pérdida de datos
   Generando código...
-D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.h(42,53): warning C4244:  '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\engine\RaceScene.h(45,53): warning C4244:  '=': conversión de 'int' a 'float'; posible pérdida de datos
   engine.vcxproj -> D:\Universidad\PracticaPATercero\JuegoPA\Juego\engine\x64\Debug\engine.exe

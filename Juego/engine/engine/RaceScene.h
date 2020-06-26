@@ -24,14 +24,18 @@ private:
 	PowerUp* powerUp;
 	Ranking rank;
 
+	int numObstaculos;
 	float puntos = 0;
 	bool derrota = false;
 	bool powerUpColision = false;
 	bool powerUpSpawned = false;
 
 public:
-	RaceScene(Vector3D cameraPosition = Vector3D(5.0f, 10.0f, 20.0f), Vector3D cameraOrientation = Vector3D(20.0f, 0.0f, 0.0f)):
+	//En el constructor creamos el mapa, obstaculos, jugador y power up
+	RaceScene(int nObstaculos, Vector3D cameraPosition = Vector3D(5.0f, 10.0f, 20.0f), 
+		Vector3D cameraOrientation = Vector3D(20.0f, 0.0f, 0.0f)):
 		Scene(),camera(CamaraFija(cameraPosition, cameraOrientation)) {
+		numObstaculos = nObstaculos;
 		 CreateCarretera();
 		 CreateObstacle();
 		 CreatePlayer();
@@ -64,7 +68,7 @@ public:
 
 	//Progreso del juego
 	void Update(const float& time) override;
-	void GameObjectLimits(const float& time);
+	void ObstaculosLimits(const float& time);
 	void CheckCollision();
 	void CheckPowerUpCollision();
 	void SpawnPowerUp();

@@ -10,7 +10,8 @@
 
 void Game::Create() 
 {
-	RaceScene* mainScene = new(nothrow) RaceScene();
+	int obstaculos = 3;  // Son 4 en realidad porque index empieza en 1 para que la velocidad no sea 0
+	RaceScene* mainScene = new(nothrow) RaceScene(obstaculos);
 	this->scenes.push_back(mainScene);
 	this->activeScene = mainScene;
 }

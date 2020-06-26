@@ -37,12 +37,6 @@
     <Filter Include="Archivos de origen\Elements">
       <UniqueIdentifier>{77b70663-bee4-4f77-a43e-eb9d592862b6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\Elements\Coche">
-      <UniqueIdentifier>{2da3e310-a7da-4869-b879-2bbaf707ecc8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Elements\Coche">
-      <UniqueIdentifier>{522b03f7-ddd2-42ec-af4a-c223f48b067c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de origen\Elements\ClasesNuevas">
       <UniqueIdentifier>{fca7e6c4-392a-4380-b7d5-4a4893c3bb6d}</UniqueIdentifier>
     </Filter>
@@ -54,6 +48,12 @@
     </Filter>
     <Filter Include="Archivos de origen\Elements\Models">
       <UniqueIdentifier>{a96394c6-6559-4ae5-9a99-7a62c01e19d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Elements\ClasesNuevas\ObstaculosMapa">
+      <UniqueIdentifier>{67bb557c-6e52-4e71-b525-cb0e440ed2e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Elements\ClasesNuevas\ObstaculosMapa">
+      <UniqueIdentifier>{7954f2ae-9c52-43f7-a718-23a59024c5eb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -78,22 +78,7 @@
     <ClCompile Include="Game.cpp">
       <Filter>Archivos de origen\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Cube.cpp">
-      <Filter>Archivos de origen\Elements\Coche</Filter>
-    </ClCompile>
-    <ClCompile Include="Cuboid.cpp">
-      <Filter>Archivos de origen\Elements\Coche</Filter>
-    </ClCompile>
-    <ClCompile Include="Sphere.cpp">
-      <Filter>Archivos de origen\Elements\Coche</Filter>
-    </ClCompile>
     <ClCompile Include="Ranking.cpp">
-      <Filter>Archivos de origen\Elements\ClasesNuevas</Filter>
-    </ClCompile>
-    <ClCompile Include="ObstaculoCubo.cpp">
-      <Filter>Archivos de origen\Elements\ClasesNuevas</Filter>
-    </ClCompile>
-    <ClCompile Include="ObstaculoEsfera.cpp">
       <Filter>Archivos de origen\Elements\ClasesNuevas</Filter>
     </ClCompile>
     <ClCompile Include="PowerUp.cpp">
@@ -113,6 +98,21 @@
     </ClCompile>
     <ClCompile Include="Player2.cpp">
       <Filter>Archivos de origen\Elements\ClasesNuevas</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
+      <Filter>Archivos de origen\Elements\ClasesNuevas\ObstaculosMapa</Filter>
+    </ClCompile>
+    <ClCompile Include="Cuboid.cpp">
+      <Filter>Archivos de origen\Elements\ClasesNuevas\ObstaculosMapa</Filter>
+    </ClCompile>
+    <ClCompile Include="ObstaculoCubo.cpp">
+      <Filter>Archivos de origen\Elements\ClasesNuevas\ObstaculosMapa</Filter>
+    </ClCompile>
+    <ClCompile Include="ObstaculoEsfera.cpp">
+      <Filter>Archivos de origen\Elements\ClasesNuevas\ObstaculosMapa</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphere.cpp">
+      <Filter>Archivos de origen\Elements\ClasesNuevas\ObstaculosMapa</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,25 +134,10 @@
     <ClInclude Include="Game.h">
       <Filter>Archivos de encabezado\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Cube.h">
-      <Filter>Archivos de encabezado\Elements\Coche</Filter>
-    </ClInclude>
-    <ClInclude Include="Cuboid.h">
-      <Filter>Archivos de encabezado\Elements\Coche</Filter>
-    </ClInclude>
-    <ClInclude Include="Sphere.h">
-      <Filter>Archivos de encabezado\Elements\Coche</Filter>
-    </ClInclude>
     <ClInclude Include="PowerUp.h">
       <Filter>Archivos de encabezado\Elements\ClasesNuevas</Filter>
     </ClInclude>
     <ClInclude Include="Ranking.h">
-      <Filter>Archivos de encabezado\Elements\ClasesNuevas</Filter>
-    </ClInclude>
-    <ClInclude Include="ObstaculoCubo.h">
-      <Filter>Archivos de encabezado\Elements\ClasesNuevas</Filter>
-    </ClInclude>
-    <ClInclude Include="ObstaculoEsfera.h">
       <Filter>Archivos de encabezado\Elements\ClasesNuevas</Filter>
     </ClInclude>
     <ClInclude Include="CamaraFija.h">
@@ -169,6 +154,21 @@
     </ClInclude>
     <ClInclude Include="Player2.h">
       <Filter>Archivos de encabezado\Elements\ClasesNuevas</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Archivos de encabezado\Elements\ClasesNuevas\ObstaculosMapa</Filter>
+    </ClInclude>
+    <ClInclude Include="Cuboid.h">
+      <Filter>Archivos de encabezado\Elements\ClasesNuevas\ObstaculosMapa</Filter>
+    </ClInclude>
+    <ClInclude Include="ObstaculoCubo.h">
+      <Filter>Archivos de encabezado\Elements\ClasesNuevas\ObstaculosMapa</Filter>
+    </ClInclude>
+    <ClInclude Include="ObstaculoEsfera.h">
+      <Filter>Archivos de encabezado\Elements\ClasesNuevas\ObstaculosMapa</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>Archivos de encabezado\Elements\ClasesNuevas\ObstaculosMapa</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
