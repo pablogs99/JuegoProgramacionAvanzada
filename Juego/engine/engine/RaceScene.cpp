@@ -80,7 +80,7 @@ void RaceScene::CreateObstacle() {
 void RaceScene::CreatePlayer() {
 
 	Player2* jugador2 = new Player2();
-	jugador2->SetPosition(Vector3D(5.0f, 1.0f, 10.0f));
+	jugador2->SetPosition(Vector3D(5.0f, 0.0f, 10.0f));
 	jugador2->SetSpeed(Vector3D(0.45f, 0, 0));
 	this->setPlayer2(*jugador2);
 }
